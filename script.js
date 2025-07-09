@@ -1,4 +1,2 @@
 // script.js
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Valerow website loaded successfully!");
-});
+console.log("Welcome to Valerow. Let’s build discipline and focus!");
