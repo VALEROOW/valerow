@@ -9,8 +9,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: #f2f2f2;
+      background-color: #121212;
+      color: #f4f4f4;
     }
     header, footer {
       background-color: #1a1a1a;
@@ -18,17 +18,14 @@
       text-align: center;
     }
     nav a {
-      color: #f2f2f2;
+      color: #f4f4f4;
       margin: 0 15px;
       text-decoration: none;
-    }
-    nav a:hover {
-      color: #cba135;
     }
     .hero {
       padding: 60px 20px;
       text-align: center;
-      background-image: linear-gradient(to bottom right, #000000, #1e1e1e);
+      background-image: linear-gradient(to bottom right, #000000, #1c1c1c);
     }
     .hero h1 {
       font-size: 3rem;
@@ -53,12 +50,27 @@
       color: #cba135;
       text-decoration: none;
     }
-    .contact a:hover {
-      text-decoration: underline;
-    }
     .footer-note {
       font-size: 0.9rem;
       color: #888;
+    }
+    .team {
+      margin-top: 40px;
+    }
+    .founders {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .founder {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(203, 161, 53, 0.2);
+    }
+    .founder h3 {
+      color: #cba135;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -81,14 +93,31 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      Welcome to <strong>Valerow</strong>, your digital discipline hub. We're a movement aimed at empowering creators to overcome phone addiction, sharpen focus, and evolve into unstoppable forces of creativity and productivity. Our mission is to build a distraction-free mindset that enables consistent growth in video editing, digital products, and creative skills.
+      Valerow is a creator-focused movement founded by two passionate individuals — Aryan and Mohit — with a mission to help creators cut through the digital noise, take control of their focus, and build real-world skills. In an age where distraction is the norm, Valerow stands out as a platform of discipline and direction.
     </p>
     <p>
-      Whether you're a budding content creator, editor, or simply someone looking to reclaim their time, Valerow helps you structure a purpose-driven lifestyle. We believe in focused habits, high-performance routines, and creative expression without burnout. Our programs are not just tutorials, they are mindset transformations.
+      We believe that creative growth comes from clarity and consistency. Our offerings are tailored to help you overcome phone addiction, master editing techniques, and sharpen your productivity. Through personalized coaching, hands-on classes, and powerful digital tools, we ensure you stay on track.
     </p>
     <p>
-      With Valerow, you're not just learning editing—you’re learning how to win the day. Break free from the scroll, build your portfolio, and discover the power of daily discipline, right from your phone or laptop. Let’s craft something extraordinary, together.
+      Whether you're an aspiring content creator or someone trying to reclaim your attention span, Valerow welcomes you. Our community is built on trust, growth, and vision. We're not just teaching editing; we're reshaping lifestyles.
     </p>
+    <p>
+      Join us and evolve into the focused, creative, and unstoppable version of yourself.
+    </p>
+
+    <div class="team">
+      <h2>Meet the Founders</h2>
+      <div class="founders">
+        <div class="founder">
+          <h3>Aryan Pratihast - Co-founder & CEO</h3>
+          <p>Aryan is the mind behind Valerow's mission to fight phone addiction and promote real creative discipline. With strong roots in content strategy and personal transformation, Aryan is building a new path for young creators.</p>
+        </div>
+        <div class="founder">
+          <h3>Mohit - Co-founder & Visionary</h3>
+          <p>Mohit brings the creative engine behind Valerow to life. From designing engaging routines to pushing innovative ideas, Mohit ensures every user has a practical way to stay inspired and skilled.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="services">
@@ -98,7 +127,7 @@
       <li>🎬 Video Editing Training Program</li>
       <li>📈 Personal Productivity Coaching</li>
       <li>🎨 Creative Classes</li>
-      <li>💡 Digital Products</li>
+      <li>🛍️ Digital Products</li>
     </ul>
   </section>
 
@@ -119,4 +148,5 @@
   </footer>
 </body>
 </html>
+
 
