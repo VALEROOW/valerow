@@ -9,37 +9,57 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #f4f4f4;
+      background-color: #0d0d0d;
+      color: #fff;
     }
-    header, footer {
-      background-color: #1a1a1a;
-      padding: 20px;
-      text-align: center;
+    header {
+      background-color: #1c1c1c;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      color: #cba135;
+      font-size: 2rem;
     }
     nav a {
-      color: #f4f4f4;
-      margin: 0 15px;
+      color: #fff;
+      margin-left: 20px;
       text-decoration: none;
+      font-weight: bold;
     }
     .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background-image: linear-gradient(to bottom right, #000000, #1c1c1c);
+      padding: 80px 20px;
+      background-color: #111;
+      text-align: left;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
     }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      background-color: #cba135;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 6px;
+    }
     section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
     }
     h2 {
       color: #cba135;
-      border-bottom: 2px solid #cba135;
-      display: inline-block;
+      font-size: 2rem;
       margin-bottom: 20px;
     }
     ul li {
@@ -50,27 +70,14 @@
       color: #cba135;
       text-decoration: none;
     }
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 30px;
+    }
     .footer-note {
       font-size: 0.9rem;
       color: #888;
-    }
-    .team {
-      margin-top: 40px;
-    }
-    .founders {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .founder {
-      background: #1f1f1f;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(203, 161, 53, 0.2);
-    }
-    .founder h3 {
-      color: #cba135;
-      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -78,6 +85,7 @@
   <header>
     <h1>Valerow</h1>
     <nav>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
@@ -85,39 +93,19 @@
     </nav>
   </header>
 
-  <div class="hero">
-    <h1>Break Free. Learn Smart. Build Discipline.</h1>
-    <p>Reclaim your focus from phone addiction and master the art of editing.</p>
-  </div>
+  <section class="hero" id="home">
+    <h1>Welcome to Valerow</h1>
+    <p>Break free from phone addiction. Learn editing. Build discipline.</p>
+    <button onclick="location.href='#services'">Explore Services</button>
+  </section>
 
   <section id="about">
     <h2>About</h2>
     <p>
-      Valerow is a creator-focused movement founded by two passionate individuals — Aryan and Mohit — with a mission to help creators cut through the digital noise, take control of their focus, and build real-world skills. In an age where distraction is the norm, Valerow stands out as a platform of discipline and direction.
+      Valerow is a creator-focused movement. We help you cut the noise,
+      reclaim control from digital distractions, and channel your energy into
+      mastering editing and creative skills with unshakable discipline.
     </p>
-    <p>
-      We believe that creative growth comes from clarity and consistency. Our offerings are tailored to help you overcome phone addiction, master editing techniques, and sharpen your productivity. Through personalized coaching, hands-on classes, and powerful digital tools, we ensure you stay on track.
-    </p>
-    <p>
-      Whether you're an aspiring content creator or someone trying to reclaim your attention span, Valerow welcomes you. Our community is built on trust, growth, and vision. We're not just teaching editing; we're reshaping lifestyles.
-    </p>
-    <p>
-      Join us and evolve into the focused, creative, and unstoppable version of yourself.
-    </p>
-
-    <div class="team">
-      <h2>Meet the Founders</h2>
-      <div class="founders">
-        <div class="founder">
-          <h3>Aryan Pratihast - Co-founder & CEO</h3>
-          <p>Aryan is the mind behind Valerow's mission to fight phone addiction and promote real creative discipline. With strong roots in content strategy and personal transformation, Aryan is building a new path for young creators.</p>
-        </div>
-        <div class="founder">
-          <h3>Mohit - Co-founder & Visionary</h3>
-          <p>Mohit brings the creative engine behind Valerow to life. From designing engaging routines to pushing innovative ideas, Mohit ensures every user has a practical way to stay inspired and skilled.</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section id="services">
@@ -126,8 +114,8 @@
       <li>📵 Phone Addiction Recovery Routine</li>
       <li>🎬 Video Editing Training Program</li>
       <li>📈 Personal Productivity Coaching</li>
+      <li>📦 Premium Physical Products</li>
       <li>🎨 Creative Classes</li>
-      <li>🛍️ Digital Products</li>
     </ul>
   </section>
 
@@ -139,7 +127,7 @@
   <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:valerowbusiness@gmail.com">valerowbusiness@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/valerow_" target="_blank">@valerow_</a></p>
+    <p>Instagram: <a href="https://instagram.com/valerow" target="_blank">@valerow</a></p>
   </section>
 
   <footer>
@@ -149,16 +137,6 @@
 </body>
 </html>
 
-<header>
-  <img src="logo.png" alt="Valerow Logo" style="height: 40px; vertical-align: middle;" />
-  <h1 style="display: inline-block; margin-left: 10px;">Valerow</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
 
 <link rel="icon" href="favicon.png" type="image/png" />
 
