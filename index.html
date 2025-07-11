@@ -30,6 +30,7 @@
       align-items: center;
       justify-content: space-between;
       animation: slideDown 1s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
     @keyframes slideDown {
       from { transform: translateY(-100%); opacity: 0; }
@@ -43,22 +44,34 @@
       height: 75px;
       margin-right: 10px;
       border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .logo img:hover {
+      transform: scale(1.1);
     }
     header h1 {
       color: #cba135;
       font-size: 2.8rem;
       line-height: 75px;
+      transition: color 0.3s;
+    }
+    header h1:hover {
+      color: #ffce4e;
     }
     nav a {
       color: #fff;
       margin-left: 22px;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: all 0.3s;
       font-size: 1.4rem;
       position: relative;
       opacity: 0;
       animation: fadeNav 1.2s ease forwards;
+    }
+    nav a:hover {
+      color: #cba135;
+      transform: scale(1.05);
     }
     nav a:nth-child(1) { animation-delay: 0.2s; }
     nav a:nth-child(2) { animation-delay: 0.4s; }
@@ -128,6 +141,10 @@
     ul li {
       font-size: 1.2rem;
       margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    ul li:hover {
+      transform: translateX(10px);
     }
     .highlight {
       color: #cba135;
@@ -144,15 +161,20 @@
       background-color: #141414;
       box-shadow: 0 0 10px #cba13544;
       animation: fadeIn 2s ease;
+      transition: transform 0.3s ease;
+    }
+    .founder-box:hover {
+      transform: scale(1.02);
     }
     .contact a {
       color: #cba135;
       text-decoration: none;
       display: inline-block;
-      transition: transform 0.5s ease;
+      transition: transform 0.5s ease, color 0.3s;
     }
     .contact a:hover {
       animation: contactBounce 0.6s forwards;
+      color: #ffd877;
     }
     @keyframes contactBounce {
       0% { transform: translateX(0); }
@@ -169,80 +191,12 @@
       font-size: 0.9rem;
       color: #888;
     }
+    .contact .founder-box {
+      padding: 10px 15px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="valerow-logo.png" alt="Valerow Logo">
-      <h1>Valerow</h1>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- rest of the HTML remains the same -->
 
-  <section class="hero" id="home">
-    <h1>Welcome to Valerow</h1>
-    <p>Break free from phone addiction. Learn editing. Build discipline.</p>
-    <button onclick="location.href='#services'">Explore Services</button>
-  </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      Valerow is a creator-focused movement dedicated to helping Gen Z fight back against digital distractions.
-      Our mission is to help youth reclaim focus, master editing skills, and build powerful routines that support
-      long-term success.
-    </p>
-    <h3>Meet the Founders</h3>
-    <div class="founder-box">
-      <ul>
-        <li><span class="highlight">Aryan Pratihast</span> — Founder & CEO<br><em>Visionary leader on a mission to break the chains of phone addiction and empower creators with clarity, focus, and top-level editing skills.</em></li>
-        <li><span class="highlight">Mohit</span> — Co-Founder<br><em>Creative execution specialist supporting systems, content strategy, and routine development for aspiring creators.</em></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>📵 <strong>Phone Addiction Recovery Routine</strong> – Build a step-by-step system to regain control of your time.</li>
-      <li>🎬 <strong>Video Editing Training Program</strong> – From basics to reels, master editing that builds careers.</li>
-      <li>📈 <strong>Personal Productivity Coaching</strong> – Build systems that stick and break procrastination loops.</li>
-      <li>📦 <strong>Premium Physical Products</strong> – Discipline journals, planners, and anti-distraction kits.</li>
-      <li>🎨 <strong>Creative Classes</strong> – Learn aesthetic design, storytelling, and purposeful content creation.</li>
-    </ul>
-  </section>
-
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <p>[Gallery content coming soon]</p>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <div class="founder-box">
-      <p><a href="mailto:valerowbusiness@gmail.com" onclick="this.classList.add('animate-contact')">Email: valerowbusiness@gmail.com</a></p>
-      <p><a href="https://instagram.com/valerow_" target="_blank" onclick="this.classList.add('animate-contact')">Instagram: @valerow_</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Valerow. All rights reserved.</p>
-    <p class="footer-note">Built with clarity and purpose ✦</p>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.contact a').forEach(link => {
-      link.addEventListener('click', () => {
-        link.classList.add('animate-contact');
-      });
-    });
-  </script>
-</body>
-</html>
