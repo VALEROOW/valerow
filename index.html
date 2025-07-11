@@ -46,18 +46,34 @@
     }
     header h1 {
       color: #cba135;
-      font-size: 2.4rem;
+      font-size: 2.8rem;
     }
     nav a {
       color: #fff;
-      margin-left: 18px;
+      margin-left: 22px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      position: relative;
+      animation: fadeNav 1.2s ease;
     }
-    nav a:hover {
-      color: #cba135;
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #cba135;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    @keyframes fadeNav {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .hero {
       padding: 80px 20px;
