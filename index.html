@@ -40,14 +40,14 @@
       align-items: center;
     }
     .logo img {
-      height: 70px;
+      height: 75px;
       margin-right: 10px;
       border-radius: 50%;
     }
     header h1 {
       color: #cba135;
       font-size: 2.8rem;
-      line-height: 70px;
+      line-height: 75px;
     }
     nav a {
       color: #fff;
@@ -57,8 +57,14 @@
       transition: color 0.3s;
       font-size: 1.4rem;
       position: relative;
-      animation: fadeNav 1.2s ease;
+      opacity: 0;
+      animation: fadeNav 1.2s ease forwards;
     }
+    nav a:nth-child(1) { animation-delay: 0.2s; }
+    nav a:nth-child(2) { animation-delay: 0.4s; }
+    nav a:nth-child(3) { animation-delay: 0.6s; }
+    nav a:nth-child(4) { animation-delay: 0.8s; }
+    nav a:nth-child(5) { animation-delay: 1s; }
     nav a::after {
       content: '';
       position: absolute;
@@ -73,8 +79,8 @@
       width: 100%;
     }
     @keyframes fadeNav {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(-20px); }
     }
     .hero {
       padding: 80px 20px;
@@ -142,19 +148,16 @@
     .contact a {
       color: #cba135;
       text-decoration: none;
-      transition: transform 0.6s ease-in-out;
       display: inline-block;
-      animation: bounceText 2s infinite alternate;
+      transition: transform 0.5s ease;
     }
-    .contact a:nth-child(1) {
-      animation-delay: 0s;
+    .contact a:hover {
+      animation: contactBounce 0.6s forwards;
     }
-    .contact a:nth-child(2) {
-      animation-delay: 0.5s;
-    }
-    @keyframes bounceText {
-      from { transform: translateX(0); }
-      to { transform: translateX(10px) scale(1.1); }
+    @keyframes contactBounce {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-10px); }
+      100% { transform: translateX(10px) scale(1.1); }
     }
     footer {
       background-color: #1a1a1a;
@@ -224,8 +227,8 @@
   <section id="contact" class="contact">
     <h2>Contact</h2>
     <div class="founder-box">
-      <p>Email: <a href="mailto:valerowbusiness@gmail.com">valerowbusiness@gmail.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/valerow_" target="_blank">@valerow_</a></p>
+      <p><a href="mailto:valerowbusiness@gmail.com" onclick="this.classList.add('animate-contact')">Email: valerowbusiness@gmail.com</a></p>
+      <p><a href="https://instagram.com/valerow_" target="_blank" onclick="this.classList.add('animate-contact')">Instagram: @valerow_</a></p>
     </div>
   </section>
 
@@ -233,5 +236,13 @@
     <p>&copy; 2025 Valerow. All rights reserved.</p>
     <p class="footer-note">Built with clarity and purpose ✦</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.contact a').forEach(link => {
+      link.addEventListener('click', () => {
+        link.classList.add('animate-contact');
+      });
+    });
+  </script>
 </body>
 </html>
