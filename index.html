@@ -40,14 +40,14 @@
       align-items: center;
     }
     .logo img {
-      height: 60px;
+      height: 70px;
       margin-right: 10px;
       border-radius: 50%;
     }
     header h1 {
       color: #cba135;
       font-size: 2.8rem;
-      line-height: 60px;
+      line-height: 70px;
     }
     nav a {
       color: #fff;
@@ -144,13 +144,17 @@
       text-decoration: none;
       transition: transform 0.6s ease-in-out;
       display: inline-block;
+      animation: bounceText 2s infinite alternate;
     }
-    .contact a:hover {
-      transform: translateX(10px) scale(1.2);
-      color: #ffe082;
+    .contact a:nth-child(1) {
+      animation-delay: 0s;
     }
-    .contact a:nth-child(1):hover {
-      transform: translateX(-10px) scale(1.2);
+    .contact a:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    @keyframes bounceText {
+      from { transform: translateX(0); }
+      to { transform: translateX(10px) scale(1.1); }
     }
     footer {
       background-color: #1a1a1a;
@@ -219,8 +223,10 @@
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:valerowbusiness@gmail.com">valerowbusiness@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/valerow_" target="_blank">@valerow_</a></p>
+    <div class="founder-box">
+      <p>Email: <a href="mailto:valerowbusiness@gmail.com">valerowbusiness@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/valerow_" target="_blank">@valerow_</a></p>
+    </div>
   </section>
 
   <footer>
