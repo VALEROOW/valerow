@@ -1,4 +1,3 @@
-<!-- HTML start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,185 @@
   <link rel="icon" type="image/png" href="11zon_cropped.png">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* --- full CSS same as before --- */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+    header {
+      background-color: #1c1c1c;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: slideDown 1s ease-in-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 85px;
+      margin-right: 12px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+    header h1 {
+      color: #cba135;
+      font-size: 3rem;
+      line-height: 85px;
+      transition: color 0.3s;
+    }
+    header h1:hover {
+      color: #ffce4e;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 22px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      font-size: 1.5rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeNav 1.2s ease forwards;
+    }
+    nav a:hover {
+      color: #cba135;
+      transform: scale(1.05);
+    }
+    nav a:nth-child(1) { animation-delay: 0.2s; }
+    nav a:nth-child(2) { animation-delay: 0.4s; }
+    nav a:nth-child(3) { animation-delay: 0.6s; }
+    nav a:nth-child(4) { animation-delay: 0.8s; }
+    nav a:nth-child(5) { animation-delay: 1s; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #cba135;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    @keyframes fadeNav {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero {
+      padding: 80px 20px;
+      background-color: #111;
+      text-align: left;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      background-color: #cba135;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .hero button:hover {
+      transform: scale(1.05);
+      background-color: #e0b848;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #cba135;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    ul li {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    ul li:hover {
+      transform: translateX(10px);
+    }
+    .highlight {
+      color: #cba135;
+      font-weight: bold;
+      background-color: #292929;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .founder-box {
+      border: 2px solid #cba135;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      background-color: #141414;
+      box-shadow: 0 0 10px #cba13544;
+      animation: fadeIn 2s ease;
+      transition: transform 0.3s ease;
+    }
+    .founder-box:hover {
+      transform: scale(1.02);
+    }
+    .contact a {
+      color: #cba135;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.5s ease, color 0.3s;
+    }
+    .contact a:hover {
+      animation: contactBounce 0.6s forwards;
+      color: #ffd877;
+    }
+    @keyframes contactBounce {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-10px); }
+      100% { transform: translateX(10px) scale(1.1); }
+    }
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .footer-note {
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .contact .founder-box {
+      padding: 10px 15px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -44,9 +221,8 @@
       mastering editing and creative skills with unshakable discipline.
     </p>
     <div class="founder-box">
-      <p><span class="highlight">Aryan & Mohit — Founder & CEO</span></p>
-      <p>Visionary leader on a mission to break the chains of phone addiction and empower creators with clarity, focus, and top-level editing skills.</p>
-      <p>Creative execution specialist supporting systems, content strategy, and routine development for aspiring creators.</p>
+      <p><span class="highlight">Aryan & Mohit — Founders & CEOs</span></p>
+      <p>Visionary leaders on a mission to break the chains of phone addiction and empower creators with clarity, focus, and top-level editing skills. Creative execution specialists supporting systems, content strategy, and routine development for aspiring creators.</p>
     </div>
   </section>
 
