@@ -179,6 +179,23 @@
       cursor: pointer;
       display: none;
     }
+
+    /* Keyframing Animation */
+    .word-animate {
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    @keyframes wordPop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); color: #cba135; }
+      100% { transform: scale(1); }
+    }
+    
+    .animate {
+      animation: wordPop 0.5s ease;
+    }
   </style>
 </head>
 <body>
@@ -196,8 +213,8 @@
   </header>
 
   <section class="hero" id="home">
-    <h1>Discipline Over Distraction</h1>
-    <p>From screen addiction to skill — transform with focus, editing and clarity.</p>
+    <h1 id="main-heading">Discipline Over Distraction</h1>
+    <p id="main-subheading">From screen addiction to skill — transform with focus, editing and clarity.</p>
     <button onclick="location.href='#services'">Explore Services</button>
   </section>
 
@@ -214,7 +231,7 @@
 
   <section class="founder-box">
     <h2>Founders & CEOs</h2>
-    <p><strong>Aryan & Mohit</strong> — Visionary creators building a world where phones don’t control minds. Their mission: Transform screen time into skill time.</p>
+    <p id="founder-text"><strong>Aryan & Mohit</strong> — Visionary creators building a world where phones don't control minds. Their mission: Transform screen time into skill time.</p>
   </section>
 
   <section id="brochure" class="brochure">
@@ -248,6 +265,46 @@
     window.onscroll = () => {
       scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
     };
+
+    // Word animation functionality
+    function splitTextIntoWords(element) {
+      const text = element.textContent;
+      const words = text.split(/(\s+)/);
+      
+      element.innerHTML = '';
+      
+      words.forEach(word => {
+        if (word.trim() === '') {
+          element.appendChild(document.createTextNode(word));
+        } else {
+          const span = document.createElement('span');
+          span.className = 'word-animate';
+          span.textContent = word;
+          span.addEventListener('click', function() {
+            this.classList.add('animate');
+            setTimeout(() => {
+              this.classList.remove('animate');
+            }, 500);
+          });
+          element.appendChild(span);
+        }
+      });
+    }
+
+    // Apply to elements you want to have animated words
+    document.addEventListener('DOMContentLoaded', function() {
+      const elementsToAnimate = [
+        document.getElementById('main-heading'),
+        document.getElementById('main-subheading'),
+        document.getElementById('founder-text')
+      ];
+      
+      elementsToAnimate.forEach(element => {
+        if (element) {
+          splitTextIntoWords(element);
+        }
+      });
+    });
   </script>
 </body>
 </html>
