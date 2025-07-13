@@ -643,3 +643,27 @@
   </script>
 </body>
 </html>
+
+<!-- Replace your current form with this: -->
+<form 
+  name="contact" 
+  method="POST" 
+  action="/success.html" 
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
+  <!-- Hidden Netlify Fields -->
+  <input type="hidden" name="form-name" value="contact">
+  <p class="hidden">
+    <label>Don't fill this out: <input name="bot-field"></label>
+  </p>
+  
+  <!-- Your Actual Form Fields -->
+  <input type="text" name="name" placeholder="Your Name" required>
+  <!-- Other fields... -->
+  <button type="submit">Send</button>
+</form>
+
+<style>
+  .hidden { display: none; }
+</style>
