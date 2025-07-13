@@ -107,6 +107,16 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
+      background: linear-gradient(145deg, #1b1b1b, #121212);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #cba13533;
+    }
+    form h3 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #ffce4e;
+      text-align: center;
     }
     input, textarea, select {
       padding: 14px;
@@ -115,6 +125,11 @@
       background-color: #1c1c1c;
       color: #fff;
       font-size: 1rem;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #cba135;
+      box-shadow: 0 0 6px #cba13588;
+      outline: none;
     }
     button[type="submit"] {
       background-color: #cba135;
@@ -125,6 +140,10 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 1rem;
+    }
+    button[type="submit"]:hover {
+      background-color: #e0b848;
+      transform: scale(1.03);
     }
     footer {
       background-color: #1a1a1a;
@@ -194,7 +213,7 @@
       <p><a href="https://instagram.com/valerow_" target="_blank">📷 Instagram: @valerow_</a></p>
     </div>
     <form name="contact-form" method="POST" data-netlify="true">
-      <h3 style="color:#cba135;">Leave Your Info</h3>
+      <h3>Leave Your Info</h3>
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <input type="tel" name="phone" placeholder="Phone Number">
@@ -218,4 +237,3 @@
   </footer>
 </body>
 </html>
-
