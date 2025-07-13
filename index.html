@@ -196,6 +196,103 @@
     .animate {
       animation: wordPop 0.5s ease;
     }
+
+    /* AI Chat Button */
+    #ai-chat-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: #D4AF37;
+      color: #000;
+      padding: 15px;
+      border-radius: 50%;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      font-size: 1.2rem;
+    }
+    
+    /* AI Chat Interface */
+    #ai-chat-container {
+      position: fixed;
+      bottom: 80px;
+      left: 25px;
+      width: 350px;
+      background: #1E1E1E;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 1000;
+      border: 1px solid #D4AF37;
+    }
+    
+    .ai-header {
+      background: #0A1F44;
+      color: #D4AF37;
+      padding: 12px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .ai-messages {
+      height: 300px;
+      overflow-y: auto;
+      padding: 15px;
+    }
+    
+    .ai-input-area {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #333;
+    }
+    
+    #ai-user-input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #2A2A2A;
+      color: white;
+    }
+    
+    .ai-send-btn {
+      background: #D4AF37;
+      color: #000;
+      border: none;
+      padding: 0 15px;
+      margin-left: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .user-query {
+      color: #D4AF37;
+      margin-bottom: 10px;
+      padding: 8px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+    }
+
+    .ai-response {
+      margin-bottom: 10px;
+      padding: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+    }
+
+    #ai-close-btn {
+      background: none;
+      border: none;
+      color: #D4AF37;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -209,6 +306,7 @@
       <a href="#services">Services</a>
       <a href="#brochure">Brochure</a>
       <a href="#contact">Contact</a>
+      <a href="#" id="ai-nav-btn">AI Assistant</a>
     </nav>
   </header>
 
@@ -253,13 +351,49 @@
     </form>
   </section>
 
+  <!-- AI Assistant Section (Hidden by Default) -->
+  <section id="ai-assistant" style="display:none; padding:60px 20px; max-width:1000px; margin:auto;">
+    <h2>Valerow AI Assistant</h2>
+    <p>Get instant help with phone addiction, editing techniques, and productivity tips.</p>
+    <div style="background: #1E1E1E; border-radius: 12px; padding: 20px; margin-top: 20px; border: 1px solid #D4AF37;">
+      <div class="ai-messages" id="ai-fullpage-messages">
+        <div class="ai-response">Hi! I'm Valerow AI. Ask me about:<br><br>
+          • Phone addiction solutions<br>
+          • Video editing tips<br>
+          • Productivity techniques</div>
+      </div>
+      <div class="ai-input-area">
+        <input type="text" id="ai-fullpage-input" placeholder="Type your question here..." style="width: 100%;">
+        <button class="ai-send-btn" onclick="sendFullpageAIQuery()">Send</button>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 Valerow. All rights reserved.</p>
     <p>Built with focus, clarity and mission ✦</p>
   </footer>
 
   <button id="scrollBtn" title="Back to top">↑</button>
+  
+  <!-- Floating AI Chat Interface -->
+  <button id="ai-chat-btn">🤖</button>
+  <div id="ai-chat-container">
+    <div class="ai-header">
+      <span>Valerow AI Assistant</span>
+      <button id="ai-close-btn">×</button>
+    </div>
+    <div class="ai-messages" id="ai-messages">
+      <div class="ai-response">Hi! How can I help you with phone addiction or video editing today?</div>
+    </div>
+    <div class="ai-input-area">
+      <input type="text" id="ai-user-input" placeholder="Ask me anything...">
+      <button class="ai-send-btn" onclick="sendAIQuery()">Send</button>
+    </div>
+  </div>
+
   <script>
+    // Scroll to Top Button
     const scrollBtn = document.getElementById("scrollBtn");
     scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
     window.onscroll = () => {
@@ -304,6 +438,121 @@
           splitTextIntoWords(element);
         }
       });
+    });
+
+    // AI Assistant Functionality
+    const aiChatBtn = document.getElementById('ai-chat-btn');
+    const aiChatContainer = document.getElementById('ai-chat-container');
+    const aiCloseBtn = document.getElementById('ai-close-btn');
+    
+    // Toggle Floating Chat
+    aiChatBtn.addEventListener('click', () => {
+      aiChatContainer.style.display = aiChatContainer.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    // Close Chat
+    aiCloseBtn.addEventListener('click', () => {
+      aiChatContainer.style.display = 'none';
+    });
+    
+    // Toggle Full AI Section
+    document.getElementById('ai-nav-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      const aiSection = document.getElementById('ai-assistant');
+      aiSection.style.display = aiSection.style.display === 'block' ? 'none' : 'block';
+      if (aiSection.style.display === 'block') {
+        window.scrollTo({ top: aiSection.offsetTop, behavior: 'smooth' });
+      }
+    });
+    
+    // AI Responses Database
+    const aiResponses = {
+      "phone addiction": "Try our 20-20-20 rule: Every 20 mins, look 20 feet away for 20 seconds. Also, enable grayscale mode on your phone to reduce dopamine triggers.",
+      "editing": "Pro tip: Use keyboard shortcuts (J=backward, K=pause, L=forward) for faster editing. Always organize your timeline with color-coded clips.",
+      "productivity": "The Pomodoro technique works best: 25 mins focused work + 5 mins break. During breaks, stretch or meditate - don't check your phone!",
+      "focus": "Create a distraction-free zone: 1) Turn off notifications 2) Use website blockers 3) Set clear daily goals before starting work.",
+      "default": "I can help with: 1) Phone detox strategies 2) Video editing techniques 3) Productivity hacks. Ask me something specific!"
+    };
+    
+    // Process AI Query (Floating Chat)
+    function sendAIQuery() {
+      const input = document.getElementById('ai-user-input');
+      const messages = document.getElementById('ai-messages');
+      
+      if (input.value.trim() === '') return;
+      
+      // Add user message
+      messages.innerHTML += `<div class="user-query">You: ${input.value}</div>`;
+      
+      // Generate AI response
+      let aiResponse = aiResponses.default;
+      const lowerInput = input.value.toLowerCase();
+      
+      if (lowerInput.includes('phone') || lowerInput.includes('addict')) {
+        aiResponse = aiResponses["phone addiction"];
+      } else if (lowerInput.includes('edit') || lowerInput.includes('video')) {
+        aiResponse = aiResponses["editing"];
+      } else if (lowerInput.includes('productivity') || lowerInput.includes('focus')) {
+        aiResponse = aiResponses["productivity"];
+      } else if (lowerInput.includes('focus') || lowerInput.includes('distraction')) {
+        aiResponse = aiResponses["focus"];
+      }
+      
+      // Simulate typing effect
+      messages.innerHTML += `<div class="ai-response">AI: Thinking...</div>`;
+      messages.scrollTop = messages.scrollHeight;
+      
+      setTimeout(() => {
+        messages.lastChild.innerHTML = `AI: ${aiResponse}`;
+        messages.scrollTop = messages.scrollHeight;
+      }, 800);
+      
+      input.value = '';
+    }
+    
+    // Process AI Query (Full Page)
+    function sendFullpageAIQuery() {
+      const input = document.getElementById('ai-fullpage-input');
+      const messages = document.getElementById('ai-fullpage-messages');
+      
+      if (input.value.trim() === '') return;
+      
+      // Add user message
+      messages.innerHTML += `<div class="user-query">You: ${input.value}</div>`;
+      
+      // Generate AI response
+      let aiResponse = aiResponses.default;
+      const lowerInput = input.value.toLowerCase();
+      
+      if (lowerInput.includes('phone') || lowerInput.includes('addict')) {
+        aiResponse = aiResponses["phone addiction"];
+      } else if (lowerInput.includes('edit') || lowerInput.includes('video')) {
+        aiResponse = aiResponses["editing"];
+      } else if (lowerInput.includes('productivity') || lowerInput.includes('focus')) {
+        aiResponse = aiResponses["productivity"];
+      } else if (lowerInput.includes('focus') || lowerInput.includes('distraction')) {
+        aiResponse = aiResponses["focus"];
+      }
+      
+      // Simulate typing effect
+      messages.innerHTML += `<div class="ai-response">AI: Thinking...</div>`;
+      messages.scrollTop = messages.scrollHeight;
+      
+      setTimeout(() => {
+        messages.lastChild.innerHTML = `AI: ${aiResponse}`;
+        messages.scrollTop = messages.scrollHeight;
+      }, 800);
+      
+      input.value = '';
+    }
+    
+    // Allow Enter key to send message
+    document.getElementById('ai-user-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendAIQuery();
+    });
+    
+    document.getElementById('ai-fullpage-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendFullpageAIQuery();
     });
   </script>
 </body>
