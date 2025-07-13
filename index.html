@@ -1,14 +1,4 @@
-
-    }
-    header h1 {
-      color: #cba135;
-      font-size: 3rem;
-      line-height: 85px;
-      transition: color 0.3s;
-    }
-    header h1:hover {
-      color: #ffce4e;
-    }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -138,33 +128,23 @@
       transform: scale(1.05);
       background-color: #e0b848;
     }
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #333;
+    .founder-box {
+      border: 2px solid #cba135;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 1000px;
       border-radius: 10px;
-      background-color: #202020;
-      color: #fff;
-      font-size: 1rem;
+      background-color: #141414;
+      box-shadow: 0 0 10px #cba13544;
+      animation: fadeIn 2s ease;
     }
-    form h3 {
-      margin-bottom: 16px;
-      color: #cba135;
+    .founder-box:hover {
+      transform: scale(1.02);
     }
-    form button {
-      background-color: #cba135;
-      color: #000;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    form button:hover {
-      background-color: #e0b848;
-      transform: scale(1.05);
+    .founder-box p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -186,6 +166,21 @@
     <h1>Welcome to Valerow</h1>
     <p>Break free from phone addiction. Learn editing. Build discipline.</p>
     <button onclick="location.href='#services'">Explore Services</button>
+  </section>
+  <section class="founder-box" id="about">
+    <h2>About Us</h2>
+    <p><span class="highlight">Aryan & Mohit — Founders & CEOs</span></p>
+    <p>Visionary leaders on a mission to break the chains of phone addiction and empower creators with clarity, focus, and top-level editing skills. Creative execution specialists supporting systems, content strategy, and routine development for aspiring creators.</p>
+  </section>
+  <section class="founder-box" id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>📵 Phone Addiction Recovery Routine</li>
+      <li>🎬 Video Editing Training Program</li>
+      <li>📈 Personal Productivity Coaching</li>
+      <li>📦 Premium Physical Products</li>
+      <li>🎨 Creative Classes</li>
+    </ul>
   </section>
   <section id="contact" class="contact">
     <h2>Contact</h2>
@@ -223,4 +218,5 @@
   </footer>
 </body>
 </html>
+
 
