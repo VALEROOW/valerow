@@ -293,6 +293,19 @@
       cursor: pointer;
       font-size: 1.2rem;
     }
+
+    .typing {
+      display: inline-block;
+    }
+    .typing::after {
+      content: '...';
+      animation: typing 1s infinite;
+    }
+    @keyframes typing {
+      0% { content: '.'; }
+      33% { content: '..'; }
+      66% { content: '...'; }
+    }
   </style>
 </head>
 <body>
@@ -340,7 +353,12 @@
 
   <section id="contact" class="contact">
     <h2>Leave Your Info</h2>
-    <form name="contact-form" method="POST" data-netlify="true">
+    <!-- FORM FIX: Added proper Netlify attributes -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
       <input type="text" name="name" placeholder="Your Full Name" required />
       <input type="email" name="email" placeholder="Email Address" required />
       <input type="tel" name="phone" placeholder="Phone Number" required />
@@ -384,7 +402,10 @@
       <button id="ai-close-btn">×</button>
     </div>
     <div class="ai-messages" id="ai-messages">
-      <div class="ai-response">Hi! How can I help you with phone addiction or video editing today?</div>
+      <div class="ai-response">🤖 <strong>Try asking:</strong><br><br>
+      1. "How to stop phone addiction?"<br>
+      2. "Best video editing shortcuts?"<br>
+      3. "How to focus for 4 hours?"</div>
     </div>
     <div class="ai-input-area">
       <input type="text" id="ai-user-input" placeholder="Ask me anything...">
@@ -440,7 +461,105 @@
       });
     });
 
-    // AI Assistant Functionality
+    // ====================== SUPER AI CORE ====================== //
+    const aiExpert = {
+      // Phone Addiction Solutions
+      "phone addiction": {
+        question: "How to reduce phone addiction?",
+        answer: `🚀 <strong>Step-by-Step Phone Detox:</strong><br><br>
+        1. <u>Digital Declutter</u>: Delete unused apps (keep only essentials)<br>
+        2. <u>Grayscale Mode</u>: Make screen black & white to reduce dopamine hits<br>
+        3. <u>20-20-20 Rule</u>: Every 20 mins, look 20 feet away for 20 seconds<br>
+        4. <u>App Limits</u>: Set strict time limits (iOS Screen Time / Android Digital Wellbeing)<br>
+        5. <u>No Phone Zones</u>: Bedroom, dining table, bathroom = Phone-Free!<br><br>
+        💡 <em>Pro Tip:</em> Use our <a href="#services">Phone Recovery Routine</a> for faster results!`,
+        followUp: ["What if I relapse?", "Best focus apps?"]
+      },
+      
+      // Video Editing Mastery
+      "editing": {
+        question: "How to improve video editing skills?",
+        answer: `🎬 <strong>Editing Pro Framework:</strong><br><br>
+        <u>Technical Skills</u>:<br>
+        • Master keyboard shortcuts (JKL for playback)<br>
+        • Learn color grading basics (LUTs + scopes)<br><br>
+        <u>Storytelling</u>:<br>
+        • Follow 3-act structure (Setup > Conflict > Resolution)<br>
+        • Use B-roll strategically (hide cuts, add context)<br><br>
+        ⏱️ <u>Workflow</u>:<br>
+        1. Organize footage with color labels<br>
+        2. Rough cut first (ignore perfection)<br>
+        3. Fine-tune audio (most viewers forgive bad video but not bad audio)<br><br>
+        🛠️ <em>Recommended Tools:</em> Premiere Pro (professionals), DaVinci Resolve (free version powerful)`,
+        followUp: ["Best transitions to use?", "How to make viral edits?"]
+      },
+      
+      // Productivity System
+      "productivity": {
+        question: "How to be more productive?",
+        answer: `⏳ <strong>Valerow Productivity Stack:</strong><br><br>
+        <u>Morning Routine</u>:<br>
+        1. <strong>No Phone First Hour</strong> (drink water, exercise, plan day)<br>
+        2. <strong>3-2-1 Rule</strong>: 3 Most Important Tasks → 2 Medium → 1 Small<br><br>
+        <u>Work Sessions</u>:<br>
+        • 90-min focused blocks (phone in another room)<br>
+        • After each block: 15-min movement break<br><br>
+        🔥 <em>Pro Hack:</em> Every Sunday do "<strong>Time Budgeting</strong>":<br>
+        1. Track where time actually goes<br>
+        2. Cut 1 time-wasting activity each week`,
+        followUp: ["How to avoid burnout?", "Best Pomodoro timer?"]
+      }
+    };
+
+    // AI Response Generator
+    function generateAIResponse(query) {
+      query = query.toLowerCase();
+      
+      // Phone Addiction Responses
+      if (query.includes("phone") || query.includes("addict") || query.includes("screen")) {
+        if (query.includes("relapse")) {
+          return `💪 <strong>Relapse Recovery:</strong><br><br>
+          Don't guilt yourself! Even pros slip sometimes.<br><br>
+          1. <u>5-5-5 Rule</u>: Ask "Will this matter in 5 days/weeks/months?"<br>
+          2. <u>Reset Fast</u>: Delete the app you relapsed on immediately<br>
+          3. <u>Accountability</u>: Tell 1 friend about your slip within 24 hours`;
+        }
+        return aiExpert["phone addiction"].answer;
+      }
+      
+      // Editing Responses
+      if (query.includes("edit") || query.includes("video") || query.includes("transition")) {
+        if (query.includes("viral")) {
+          return `📈 <strong>Viral Edit Formula:</strong><br><br>
+          1. <u>Hook Fast</u>: First 3 seconds must grab attention<br>
+          2. <u>Pace</u>: Keep cuts under 3 seconds for TikTok/Reels<br>
+          3. <u>Trends</u>: Use trending audio + put unique twist<br><br>
+          🎯 <em>Key Insight:</em> "Watch time" > "Views" - Algorithm loves retention!`;
+        }
+        return aiExpert["editing"].answer;
+      }
+      
+      // Productivity Responses
+      if (query.includes("productiv") || query.includes("focus") || query.includes("pomodoro")) {
+        if (query.includes("burnout")) {
+          return `🧠 <strong>Burnout Prevention:</strong><br><br>
+          1. <u>Weekly Deep Rest</u>: 1 full day offline (no creative work)<br>
+          2. <u>Energy Tracking</u>: Notice when you're most focused (morning/night?)<br>
+          3. <u>Microbreaks</u>: Every 90 mins - stretch, hydrate, walk<br><br>
+          🚨 <em>Warning Signs:</em> Irritability, procrastination, tiredness even after sleep`;
+        }
+        return aiExpert["productivity"].answer;
+      }
+      
+      // Default Response
+      return `🤖 <strong>Ask me about:</strong><br><br>
+      1. <u>Phone Addiction</u>: "How to reduce screen time?"<br>
+      2. <u>Video Editing</u>: "Best transitions for reels?"<br>
+      3. <u>Productivity</u>: "How to focus for longer?"<br><br>
+      <em>Tip:</em> Be specific for detailed step-by-step guides!`;
+    }
+
+    // AI Chat Interface
     const aiChatBtn = document.getElementById('ai-chat-btn');
     const aiChatContainer = document.getElementById('ai-chat-container');
     const aiCloseBtn = document.getElementById('ai-close-btn');
@@ -465,47 +584,26 @@
       }
     });
     
-    // AI Responses Database
-    const aiResponses = {
-      "phone addiction": "Try our 20-20-20 rule: Every 20 mins, look 20 feet away for 20 seconds. Also, enable grayscale mode on your phone to reduce dopamine triggers.",
-      "editing": "Pro tip: Use keyboard shortcuts (J=backward, K=pause, L=forward) for faster editing. Always organize your timeline with color-coded clips.",
-      "productivity": "The Pomodoro technique works best: 25 mins focused work + 5 mins break. During breaks, stretch or meditate - don't check your phone!",
-      "focus": "Create a distraction-free zone: 1) Turn off notifications 2) Use website blockers 3) Set clear daily goals before starting work.",
-      "default": "I can help with: 1) Phone detox strategies 2) Video editing techniques 3) Productivity hacks. Ask me something specific!"
-    };
-    
     // Process AI Query (Floating Chat)
     function sendAIQuery() {
       const input = document.getElementById('ai-user-input');
       const messages = document.getElementById('ai-messages');
       
-      if (input.value.trim() === '') return;
+      if (!input.value.trim()) return;
       
       // Add user message
       messages.innerHTML += `<div class="user-query">You: ${input.value}</div>`;
       
-      // Generate AI response
-      let aiResponse = aiResponses.default;
-      const lowerInput = input.value.toLowerCase();
-      
-      if (lowerInput.includes('phone') || lowerInput.includes('addict')) {
-        aiResponse = aiResponses["phone addiction"];
-      } else if (lowerInput.includes('edit') || lowerInput.includes('video')) {
-        aiResponse = aiResponses["editing"];
-      } else if (lowerInput.includes('productivity') || lowerInput.includes('focus')) {
-        aiResponse = aiResponses["productivity"];
-      } else if (lowerInput.includes('focus') || lowerInput.includes('distraction')) {
-        aiResponse = aiResponses["focus"];
-      }
-      
-      // Simulate typing effect
-      messages.innerHTML += `<div class="ai-response">AI: Thinking...</div>`;
+      // Thinking animation
+      messages.innerHTML += `<div class="ai-response">AI: <span class="typing">Typing...</span></div>`;
       messages.scrollTop = messages.scrollHeight;
       
+      // Simulate AI processing delay
       setTimeout(() => {
-        messages.lastChild.innerHTML = `AI: ${aiResponse}`;
+        const response = generateAIResponse(input.value);
+        document.querySelector('.typing').outerHTML = response;
         messages.scrollTop = messages.scrollHeight;
-      }, 800);
+      }, 1000);
       
       input.value = '';
     }
@@ -515,33 +613,21 @@
       const input = document.getElementById('ai-fullpage-input');
       const messages = document.getElementById('ai-fullpage-messages');
       
-      if (input.value.trim() === '') return;
+      if (!input.value.trim()) return;
       
       // Add user message
       messages.innerHTML += `<div class="user-query">You: ${input.value}</div>`;
       
-      // Generate AI response
-      let aiResponse = aiResponses.default;
-      const lowerInput = input.value.toLowerCase();
-      
-      if (lowerInput.includes('phone') || lowerInput.includes('addict')) {
-        aiResponse = aiResponses["phone addiction"];
-      } else if (lowerInput.includes('edit') || lowerInput.includes('video')) {
-        aiResponse = aiResponses["editing"];
-      } else if (lowerInput.includes('productivity') || lowerInput.includes('focus')) {
-        aiResponse = aiResponses["productivity"];
-      } else if (lowerInput.includes('focus') || lowerInput.includes('distraction')) {
-        aiResponse = aiResponses["focus"];
-      }
-      
-      // Simulate typing effect
-      messages.innerHTML += `<div class="ai-response">AI: Thinking...</div>`;
+      // Thinking animation
+      messages.innerHTML += `<div class="ai-response">AI: <span class="typing">Typing...</span></div>`;
       messages.scrollTop = messages.scrollHeight;
       
+      // Simulate AI processing delay
       setTimeout(() => {
-        messages.lastChild.innerHTML = `AI: ${aiResponse}`;
+        const response = generateAIResponse(input.value);
+        document.querySelector('.typing').outerHTML = response;
         messages.scrollTop = messages.scrollHeight;
-      }, 800);
+      }, 1000);
       
       input.value = '';
     }
