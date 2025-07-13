@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valerow | Focus. Edit. Evolve.</title>
   <meta name="description" content="Valerow - Phone Addiction Recovery and Editing Training">
-  <meta name="keywords" content="Valerow, phone detox, editing training, screen2skill">
+  <meta name="keywords" content="Valerow, phone detox, editing training, screen2skill, anti-phone addiction, editing courses, creative discipline, teen productivity">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Valerow Team">
+  <meta property="og:title" content="Valerow | Focus. Edit. Evolve.">
+  <meta property="og:description" content="Valerow helps young creators break free from screen addiction and master editing with focus and discipline.">
+  <meta property="og:image" content="11zon_cropped.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valerow.shop">
   <link rel="icon" type="image/png" href="11zon_cropped.png">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -21,138 +26,102 @@
     }
     header {
       background-color: #1c1c1c;
-      padding: 16px 30px;
+      padding: 10px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      animation: slideDown 1s ease-in-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
     .logo {
       display: flex;
       align-items: center;
     }
     .logo img {
-      height: 105px;
-      margin-right: 18px;
+      height: 85px;
+      margin-right: 12px;
       border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .logo img:hover {
+      transform: scale(1.1);
     }
     header h1 {
       color: #cba135;
-      font-size: 3.4rem;
-      line-height: 105px;
+      font-size: 3rem;
+      line-height: 85px;
+      transition: color 0.3s;
+    }
+    header h1:hover {
+      color: #ffce4e;
     }
     nav a {
       color: #fff;
-      margin-left: 26px;
+      margin-left: 22px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.4rem;
+      transition: all 0.3s;
+      font-size: 1.5rem;
+      position: relative;
+      opacity: 0;
+      animation: fadeNav 1.2s ease forwards;
     }
-    .hero {
-      padding: 100px 30px;
-      background-color: #111;
-      text-align: left;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 24px;
-    }
-    .hero p {
-      font-size: 1.4rem;
-      margin-bottom: 36px;
-    }
-    .hero button {
-      background-color: #cba135;
-      color: #000;
-      border: none;
-      padding: 14px 28px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 6px;
-    }
-    section {
-      padding: 70px 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
+    nav a:hover {
       color: #cba135;
-      font-size: 2.2rem;
-      margin-bottom: 24px;
+      transform: scale(1.05);
     }
-    ul li {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
+    nav a:nth-child(1) { animation-delay: 0.2s; }
+    nav a:nth-child(2) { animation-delay: 0.4s; }
+    nav a:nth-child(3) { animation-delay: 0.6s; }
+    nav a:nth-child(4) { animation-delay: 0.8s; }
+    nav a:nth-child(5) { animation-delay: 1s; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #cba135;
+      transition: width 0.3s;
     }
-    .highlight {
-      color: #cba135;
-      font-weight: bold;
-      background-color: #292929;
-      padding: 4px 8px;
-      border-radius: 5px;
+    nav a:hover::after {
+      width: 100%;
     }
-    .founder-box {
-      border: 2px solid #cba135;
-      padding: 26px;
-      margin-top: 28px;
-      border-radius: 12px;
-      background-color: #141414;
+    @keyframes fadeNav {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .contact a {
-      color: #cba135;
-      text-decoration: none;
-    }
-    form {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      background: linear-gradient(145deg, #1b1b1b, #121212);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #cba13533;
-    }
-    form h3 {
-      margin-bottom: 20px;
-      font-size: 1.6rem;
-      color: #ffce4e;
-      text-align: center;
-    }
-    input, textarea, select {
-      padding: 14px;
-      border-radius: 8px;
-      border: 1px solid #cba135;
-      background-color: #1c1c1c;
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      background-color: #202020;
       color: #fff;
       font-size: 1rem;
     }
-    input:focus, textarea:focus, select:focus {
-      border-color: #cba135;
-      box-shadow: 0 0 6px #cba13588;
-      outline: none;
+    form h3 {
+      margin-bottom: 16px;
+      color: #cba135;
     }
-    button[type="submit"] {
+    form button {
       background-color: #cba135;
       color: #000;
-      font-weight: bold;
+      padding: 12px 20px;
       border: none;
-      padding: 12px;
       border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
-    button[type="submit"]:hover {
+    form button:hover {
       background-color: #e0b848;
-      transform: scale(1.03);
-    }
-    footer {
-      background-color: #1a1a1a;
-      text-align: center;
-      padding: 36px;
-    }
-    .footer-note {
-      font-size: 1rem;
-      color: #888;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -170,42 +139,11 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <section class="hero" id="home">
     <h1>Welcome to Valerow</h1>
     <p>Break free from phone addiction. Learn editing. Build discipline.</p>
     <button onclick="location.href='#services'">Explore Services</button>
   </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>Valerow is a creator-focused movement. We help you cut the noise, reclaim control from digital distractions, and channel your energy into mastering editing and creative skills with unshakable discipline.</p>
-    <div class="founder-box">
-      <p><span class="highlight">Aryan & Mohit — Founders & CEOs</span></p>
-      <p>Visionary leaders on a mission to break the chains of phone addiction and empower creators with clarity, focus, and top-level editing skills. Creative execution specialists supporting systems, content strategy, and routine development for aspiring creators.</p>
-    </div>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>📵 <a href="📵 Phone Addiction Recovery Routine.png" target="_blank" style="color:#cba135; text-decoration:none;">Phone Addiction Recovery Routine</a></li>
-      <li>🎬 Video Editing Training Program</li>
-      <li>📈 Personal Productivity Coaching</li>
-      <li>📦 Premium Physical Products</li>
-      <li>🎨 Creative Classes</li>
-    </ul>
-  </section>
-
-  <section id="brochure">
-    <h2>Brochure</h2>
-    <p>Download our official brochure to learn more:</p>
-    <div style="text-align:center; margin-top: 24px;">
-      <a href="real valerow brausher.pdf" download style="color: #cba135; text-decoration: underline; font-size: 1.4rem;">
-        📥 Download Brochure (PDF)</a>
-    </div>
-  </section>
-
   <section id="contact" class="contact">
     <h2>Contact</h2>
     <div class="founder-box">
@@ -214,23 +152,28 @@
     </div>
     <form name="contact-form" method="POST" data-netlify="true">
       <h3>Leave Your Info</h3>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
       <input type="tel" name="phone" placeholder="Phone Number">
-      <input type="number" name="child_age" placeholder="Child Age">
+      <input type="number" name="child_age" placeholder="Child's Age">
       <select name="gender">
         <option value="">Select Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Other</option>
       </select>
-      <input type="text" name="customer_type" placeholder="Parent / Student / Other">
-      <input type="text" name="city" placeholder="City">
-      <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+      <select name="customer_type">
+        <option value="">Who are you?</option>
+        <option value="parent">Parent</option>
+        <option value="student">Student</option>
+        <option value="mentor">Mentor</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="text" name="city" placeholder="Your City">
+      <textarea name="message" placeholder="Write your message here..." rows="4"></textarea>
       <button type="submit">Submit</button>
     </form>
   </section>
-
   <footer>
     <p>&copy; 2025 Valerow. All rights reserved.</p>
     <p class="footer-note">Built with clarity and purpose ✦</p>
