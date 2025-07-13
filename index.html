@@ -306,6 +306,8 @@
       33% { content: '..'; }
       66% { content: '...'; }
     }
+    
+    .hidden { display: none; }
   </style>
 </head>
 <body>
@@ -353,8 +355,7 @@
 
   <section id="contact" class="contact">
     <h2>Leave Your Info</h2>
-    <!-- FORM FIX: Added proper Netlify attributes -->
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
       <p class="hidden">
         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -643,51 +644,3 @@
   </script>
 </body>
 </html>
-
-<!-- Replace your current form with this: -->
-<form 
-  name="contact" 
-  method="POST" 
-  action="/success.html" 
-  data-netlify="true"
-  netlify-honeypot="bot-field"
->
-  <!-- Hidden Netlify Fields -->
-  <input type="hidden" name="form-name" value="contact">
-  <p class="hidden">
-    <label>Don't fill this out: <input name="bot-field"></label>
-  </p>
-  
-  <!-- Your Actual Form Fields -->
-  <input type="text" name="name" placeholder="Your Name" required>
-  <!-- Other fields... -->
-  <button type="submit">Send</button>
-</form>
-
-<style>
-  .hidden { display: none; }
-</style>
-
-<form 
-  name="contact" 
-  method="POST" 
-  action="/success.html" 
-  data-netlify="true" 
-  netlify-honeypot="bot-field"
->
-  <input type="hidden" name="form-name" value="contact" />
-  <p class="hidden">
-    <label>Don't fill this out: <input name="bot-field" /></label>
-  </p>
-  <input type="text" name="name" placeholder="Your Full Name" required />
-  <input type="email" name="email" placeholder="Email Address" required />
-  <input type="tel" name="phone" placeholder="Phone Number" required />
-  <input type="text" name="city" placeholder="City" required />
-  <input type="number" name="age" placeholder="Child's Age" required />
-  <textarea name="message" placeholder="Your Message or Query"></textarea>
-  <button type="submit">Submit</button>
-</form>
-
-<style>
-  .hidden { display: none; }
-</style>
