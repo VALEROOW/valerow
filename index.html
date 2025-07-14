@@ -323,6 +323,31 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
+    
+    /* Social Media Badge */
+    .social-badge {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .social-badge img {
+      width: 20px;
+      margin-right: 8px;
+    }
+    
+    /* Enhanced AI Response Box */
+    .ai-tip-box {
+      background: #1E2D3D;
+      border-left: 4px solid #D4AF37;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 0 8px 8px 0;
+    }
   </style>
 </head>
 <body>
@@ -386,7 +411,10 @@
       <a href="tel:+919993773575">📞 +91 9993773575</a>
       <a href="tel:+917669844946">📞 +91 7669844946</a>
       <a href="mailto:valerowbusiness@gmail.com">📧 valerowbusiness@gmail.com</a>
-      <a href="https://instagram.com/valerow_" target="_blank">📷 @valerow_</a>
+      <div class="social-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
+        <span>@valerow_</span>
+      </div>
     </div>
   </section>
 
@@ -396,10 +424,17 @@
     <p>Get instant help with phone addiction, editing techniques, and productivity tips.</p>
     <div style="background: #1E1E1E; border-radius: 12px; padding: 20px; margin-top: 20px; border: 1px solid #D4AF37;">
       <div class="ai-messages" id="ai-fullpage-messages">
-        <div class="ai-response">Hi! I'm Valerow AI. Ask me about:<br><br>
+        <div class="ai-response">🤖 <strong>Hi! I'm Valerow AI Assistant</strong><br><br>
+          Ask me anything about:<br>
           • Phone addiction solutions<br>
-          • Video editing tips<br>
-          • Productivity techniques</div>
+          • Video editing mastery<br>
+          • Productivity hacks<br>
+          • Valerow products/services<br><br>
+          
+          <div class="ai-tip-box">
+            <strong>Pro Tip:</strong> Try asking "How to make viral edits?" or "Best way to reduce screen time?"
+          </div>
+        </div>
       </div>
       <div class="ai-input-area">
         <input type="text" id="ai-fullpage-input" placeholder="Type your question here..." style="width: 100%;">
@@ -411,6 +446,7 @@
   <footer>
     <p>&copy; 2025 Valerow. All rights reserved.</p>
     <p>Built with focus, clarity and mission ✦</p>
+    <p>Instagram: @valerow_ | Email: valerowbusiness@gmail.com</p>
   </footer>
 
   <button id="scrollBtn" title="Back to top">↑</button>
@@ -423,10 +459,15 @@
       <button id="ai-close-btn">×</button>
     </div>
     <div class="ai-messages" id="ai-messages">
-      <div class="ai-response">🤖 <strong>Try asking:</strong><br><br>
+      <div class="ai-response">🤖 <strong>Hello! I'm Valerow AI</strong><br><br>
       1. "How to stop phone addiction?"<br>
       2. "Best video editing shortcuts?"<br>
-      3. "How to focus for 4 hours?"</div>
+      3. "Valerow product details?"<br><br>
+      
+      <div class="ai-tip-box">
+        <strong>Try:</strong> "What's your Instagram?" or "Contact email?"
+      </div>
+      </div>
     </div>
     <div class="ai-input-area">
       <input type="text" id="ai-user-input" placeholder="Ask me anything...">
@@ -489,42 +530,53 @@
       window.scrollTo({ top: document.getElementById('ai-assistant').offsetTop, behavior: 'smooth' });
     });
 
-    // ====================== ENHANCED AI CORE ====================== //
+    // ====================== SUPERCHARGED AI CORE ====================== //
     const aiExpert = {
       // Phone Addiction Solutions
       "phone addiction": {
         question: "How to reduce phone addiction?",
-        answer: `🚀 <strong>Comprehensive Phone Detox Plan:</strong><br><br>
-        1. <u>Digital Audit (Day 1-3)</u>:<br>
-           • Track screen time with apps like Digital Wellbeing<br>
-           • Identify your top 3 time-wasting apps<br><br>
-        2. <u>Environment Design (Day 4-7)</u>:<br>
-           • Enable grayscale mode (reduces dopamine hits by 50%)<br>
-           • Create "no-phone zones" (bedroom, dining table)<br><br>
-        3. <u>Behavior Replacement (Week 2+)</u>:<br>
-           • Implement the 20-20-20 rule (every 20 mins, 20 sec break looking 20 ft away)<br>
-           • Replace social media with Kindle/audible during commute<br><br>
-        💡 <em>Advanced Technique:</em> Use our <a href="#services">90-Day Detox Challenge</a> with daily accountability checks`,
-        followUp: ["What if I relapse?", "Best focus apps?"]
+        answer: `🚀 <strong>Valerow's 30-Day Phone Detox Plan:</strong><br><br>
+        <u>Phase 1: Digital Audit (Day 1-7)</u>:<br>
+        • Track screen time with apps like Digital Wellbeing<br>
+        • Identify your top 3 time-wasting apps (usually social media)<br>
+        • Set app timers (max 30 mins/day for problem apps)<br><br>
+        
+        <u>Phase 2: Environment Design (Day 8-21)</u>:<br>
+        • Enable grayscale mode (reduces dopamine hits by 50%)<br>
+        • Create "no-phone zones" (bedroom, dining table, bathroom)<br>
+        • Charge phone outside bedroom overnight<br><br>
+        
+        <u>Phase 3: Habit Replacement (Day 22-30+)</u>:<br>
+        • Implement the 20-20-20 rule (every 20 mins, 20 sec break looking 20 ft away)<br>
+        • Replace social media scrolling with Kindle/audible during commute<br>
+        • Join Valerow's <a href="#services">90-Day Detox Challenge</a> for accountability`,
+        followUp: ["What if I relapse?", "Best focus apps?", "How Aryan overcame addiction?"]
       },
       
       // Video Editing Mastery
       "editing": {
         question: "How to improve video editing skills?",
-        answer: `🎬 <strong>Pro Editor's Roadmap:</strong><br><br>
+        answer: `🎬 <strong>Valerow's Editor Pro Roadmap:</strong><br><br>
         <u>Month 1: Technical Foundation</u>:<br>
-        • Master 15 essential shortcuts (JKL trimming, ripple delete)<br>
-        • Learn color correction using vectorscopes/waveforms<br><br>
+        • Master 15 essential shortcuts (JKL trimming, ripple delete, blade tool)<br>
+        • Learn color correction using vectorscopes/waveforms<br>
+        • Understand keyframe animation principles<br><br>
+        
         <u>Month 2: Storytelling</u>:<br>
         • Apply the 3-act structure to all projects<br>
-        • Develop "B-roll first" editing mentality<br><br>
+        • Develop "B-roll first" editing mentality<br>
+        • Study pacing from top YouTubers (MrBeast, Casey Neistat)<br><br>
+        
         <u>Month 3: Workflow Optimization</u>:<br>
         • Create custom presets for repetitive tasks<br>
-        • Implement proxy editing for 4K+ footage<br><br>
-        🛠️ <em>Tool Stack:</em><br>
-        • Beginners: DaVinci Resolve (free)<br>
-        • Professionals: Premiere Pro + After Effects combo`,
-        followUp: ["Best transitions for YouTube?", "How to edit faster?"]
+        • Implement proxy editing for 4K+ footage<br>
+        • Learn basic After Effects for motion graphics<br><br>
+        
+        🛠️ <em>Valerow Recommended Stack:</em><br>
+        • Beginners: DaVinci Resolve (free version has 95% of features)<br>
+        • Professionals: Premiere Pro + After Effects combo<br>
+        • Mobile: CapCut (best for TikTok/Reels)`,
+        followUp: ["Best transitions for YouTube?", "How to edit faster?", "Mohit's editing routine?"]
       },
       
       // Productivity System
@@ -533,46 +585,102 @@
         answer: `⏳ <strong>The Valerow Productivity Framework:</strong><br><br>
         <u>Morning Protocol (6-9 AM)</u>:<br>
         1. <strong>No Screen First Hour</strong>:<br>
-           • Hydration + 7-min workout<br>
-           • Handwritten daily plan<br><br>
+           • Drink 500ml water immediately<br>
+           • 7-min workout (pushups, squats, planks)<br>
+           • Handwritten daily plan (3-2-1 system)<br><br>
+        
         <u>Deep Work Blocks (3x90min)</u>:<br>
-        • Phone in another room<br>
-        • Noise-cancelling headphones with brown noise<br><br>
+        • Phone in another room on DND<br>
+        • Noise-cancelling headphones with brown noise<br>
+        • Use Pomodoro technique (90on/20off)<br><br>
+        
         <u>Evening Review (9-10 PM)</u>:<br>
-        • 15-min journaling (wins/failures)<br>
-        • Prepare next day's 3-2-1 task list<br><br>
-        🔥 <em>Pro Tip:</em> Every Sunday do a "<strong>Digital Detox Day</strong>" - no screens for 24 hours`,
-        followUp: ["How to avoid burnout?", "Best Pomodoro timer?"]
+        • 15-min journaling (3 wins/2 failures/1 improvement)<br>
+        • Prepare next day's 3-2-1 task list<br>
+        • Digital sunset (no screens 1hr before bed)<br><br>
+        
+        🔥 <em>Valerow Pro Tip:</em> Every Sunday do a "<strong>Digital Detox Day</strong>" - no screens for 24 hours. Use our <a href="#services">Productivity Kit</a> to track progress.`,
+        followUp: ["How to avoid burnout?", "Best Pomodoro timer?", "Aryan's morning routine?"]
       },
       
-      // Relapse Recovery
-      "relapse": {
-        question: "What if I relapse into phone addiction?",
-        answer: `🔄 <strong>Relapse Recovery Protocol:</strong><br><br>
-        1. <u>72-Hour Reset</u>:<br>
-           • Delete the app you relapsed on<br>
-           • Enable app timers (max 30 mins/day)<br><br>
-        2. <u>Accountability Partner</u>:<br>
-           • Share your screen time with a friend daily<br>
-           • $50 penalty for exceeding limits (donate to charity)<br><br>
-        3. <u>Root Cause Analysis</u>:<br>
-           • Identify triggers (boredom/stress/loneliness)<br>
-           • Create alternative responses (pushups, journaling)`
+      // Valerow Products
+      "products": {
+        question: "What products does Valerow offer?",
+        answer: `📦 <strong>Valerow Premium Products:</strong><br><br>
+        <u>1. Focus Toolkit ($49)</u>:<br>
+        • Time-locking phone case<br>
+        • Productivity planner<br>
+        • Focus essential oils blend<br><br>
+        
+        <u>2. Editor's Bundle ($99)</u>:<br>
+        • Custom shortcut keycaps<br>
+        • Color grading LUT pack<br>
+        • 1-year access to Valerow Masterclass<br><br>
+        
+        <u>3. 90-Day Detox Challenge ($199)</u>:<br>
+        • Weekly coaching calls<br>
+        • Accountability partner matching<br>
+        • Progress tracking dashboard<br><br>
+        
+        💡 <em>Special Offer:</em> Use code <strong>VALEROWAI10</strong> for 10% off first purchase!`,
+        followUp: ["How to order?", "International shipping?", "Money-back guarantee?"]
+      },
+      
+      // About Founders
+      "founders": {
+        question: "Tell me about Valerow founders",
+        answer: `👑 <strong>Aryan & Mohit - The Valerow Visionaries</strong><br><br>
+        <u>Aryan's Journey:</u><br>
+        • Recovered from 8hr/day phone addiction<br>
+        • Built editing business from age 17<br>
+        • Specializes in productivity systems<br><br>
+        
+        <u>Mohit's Expertise:</u><br>
+        • Professional video editor since 2018<br>
+        • Created viral edits for top creators<br>
+        • Developed Valerow's editing curriculum<br><br>
+        
+        Together they've helped 5,000+ students transform their screen habits and creative skills through Valerow programs.`,
+        followUp: ["Their editing style?", "Personal Instagrams?", "Business philosophy?"]
+      },
+      
+      // Contact Information
+      "contact": {
+        question: "How to contact Valerow?",
+        answer: `📞 <strong>Valerow Contact Channels:</strong><br><br>
+        • Email: <a href="mailto:valerowbusiness@gmail.com">valerowbusiness@gmail.com</a><br>
+        • Instagram: <a href="https://instagram.com/valerow_" target="_blank">@valerow_</a><br>
+        • Phone: +91 9993773575 / +91 7669844946<br>
+        • Office: Delhi, India<br><br>
+        
+        <div class="ai-tip-box">
+          <strong>Business Hours:</strong> 10AM-6PM IST (Mon-Fri)<br>
+          <strong>Response Time:</strong> Within 24 hours
+        </div>`,
+        followUp: ["WhatsApp number?", "Collaborations?", "Visit office?"]
       },
       
       // Viral Content
       "viral": {
         question: "How to make viral edits?",
-        answer: `📈 <strong>Viral Content Formula (Tested)</strong>:<br><br>
+        answer: `📈 <strong>Valerow's Viral Content Formula (Tested)</strong>:<br><br>
         <u>Hook Formula (First 3 Seconds)</u>:<br>
         • Start mid-action ("Wait, what?")<br>
-        • Use bold text overlay ("You're doing this wrong")<br><br>
+        • Use bold text overlay ("You're doing this wrong")<br>
+        • Surprise element (unexpected sound/visual)<br><br>
+        
         <u>Retention Hacks</u>:<br>
         • Cut every 2-3 seconds (TikTok/Reels)<br>
-        • Add "pattern interrupts" (zoom effects, sound effects)<br><br>
+        • Add "pattern interrupts" (zoom effects, sound effects)<br>
+        • Use trending audio within first 5 seconds<br><br>
+        
         <u>Algorithm Tricks</u>:<br>
         • Post at 8 AM & 7 PM (dual-audience strategy)<br>
-        • Use 3-5 trending hashtags + 2 niche ones`
+        • Use 3-5 trending hashtags + 2 niche ones<br>
+        • First 50 likes within 30 minutes (ask friends)<br><br>
+        
+        🎓 <em>Learn More:</em> Join our <a href="#services">Viral Editing Masterclass</a>`,
+        followUp: ["Best transitions?", "Color grading tips?", "Mohit's editing setup?"]
       }
     };
 
@@ -580,52 +688,99 @@
     function generateAIResponse(query) {
       query = query.toLowerCase();
       
+      // Contact Information
+      if (query.includes("contact") || query.includes("email") || query.includes("insta") || 
+          query.includes("whatsapp") || query.includes("number") || query.includes("social")) {
+        return aiExpert["contact"].answer;
+      }
+      
+      // Products/Services
+      if (query.includes("product") || query.includes("service") || query.includes("buy") || 
+          query.includes("order") || query.includes("purchase") || query.includes("kit")) {
+        return aiExpert["products"].answer;
+      }
+      
+      // Founders Information
+      if (query.includes("aryan") || query.includes("mohit") || query.includes("founder") || 
+          query.includes("ceo") || query.includes("owner") || query.includes("creator")) {
+        return aiExpert["founders"].answer;
+      }
+      
       // Phone Addiction Responses
-      if (query.includes("phone") || query.includes("addict") || query.includes("screen")) {
+      if (query.includes("phone") || query.includes("addict") || query.includes("screen") || 
+          query.includes("distraction") || query.includes("scroll")) {
         if (query.includes("relapse")) {
-          return aiExpert["relapse"].answer;
+          return `🔄 <strong>Relapse Recovery Protocol:</strong><br><br>
+          1. <u>72-Hour Reset</u>:<br>
+             • Delete the app you relapsed on<br>
+             • Enable app timers (max 30 mins/day)<br><br>
+          2. <u>Accountability Partner</u>:<br>
+             • Share your screen time with a friend daily<br>
+             • $50 penalty for exceeding limits (donate to charity)<br><br>
+          3. <u>Root Cause Analysis</u>:<br>
+             • Identify triggers (boredom/stress/loneliness)<br>
+             • Create alternative responses (pushups, journaling)<br><br>
+          💪 <em>Remember:</em> Relapse is part of recovery. Aryan had 3 major relapses before succeeding!`;
         }
         return aiExpert["phone addiction"].answer;
       }
       
       // Editing Responses
-      if (query.includes("edit") || query.includes("video")) {
+      if (query.includes("edit") || query.includes("video") || query.includes("premiere") || 
+          query.includes("resolve") || query.includes("transition") || query.includes("effect")) {
         if (query.includes("viral") || query.includes("trend")) {
           return aiExpert["viral"].answer;
         }
-        if (query.includes("transition") || query.includes("effect")) {
-          return `🎞️ <strong>Professional Transitions Guide:</strong><br><br>
-          • <u>For Tutorials</u>: Simple cuts + occasional zoom transitions<br>
-          • <u>For Music Videos</u>: Glitch transitions + speed ramps<br>
-          • <u>For Podcasts</u>: J-cut transitions (audio precedes video)<br><br>
-          🚫 <em>Avoid:</em> Overusing flashy transitions - distracts from content`;
+        if (query.includes("shortcut") || query.includes("keyboard")) {
+          return `⌨️ <strong>Essential Editing Shortcuts:</strong><br><br>
+          <u>Premiere Pro</u>:<br>
+          • JKL (play backwards/forwards)<br>
+          • Q/W (ripple trim)<br>
+          • C (blade tool)<br><br>
+          
+          <u>DaVinci Resolve</u>:<br>
+          • Ctrl+B (blade)<br>
+          • Alt+[ or ] (trim)<br>
+          • F (match frame)<br><br>
+          
+          💡 <em>Pro Tip:</em> Mohit recommends customizing shortcuts to match your workflow!`;
         }
         return aiExpert["editing"].answer;
       }
       
       // Productivity Responses
-      if (query.includes("productiv") || query.includes("focus")) {
+      if (query.includes("productiv") || query.includes("focus") || query.includes("concentrat") || 
+          query.includes("distraction") || query.includes("routine") || query.includes("habit")) {
         if (query.includes("burnout")) {
           return `🧠 <strong>Burnout Recovery Plan:</strong><br><br>
           1. <u>Immediate Reset (24h)</u>:<br>
              • No work devices after 6 PM<br>
-             • 90-min nature walk without phone<br><br>
+             • 90-min nature walk without phone<br>
+             • Digital detox (no screens)<br><br>
           2. <u>Weekly Maintenance</u>:<br>
              • "No Meeting Wednesdays"<br>
              • Digital Sabbath (Sunday offline)<br><br>
           3. <u>Long-Term Solution</u>:<br>
              • 80/20 rule - focus on top 20% tasks<br>
-             • Quarterly 3-day detox retreats`;
+             • Quarterly 3-day detox retreats<br><br>
+          🌿 <em>Valerow Philosophy:</em> Productivity ≠ working more. It's working smarter.`;
         }
         return aiExpert["productivity"].answer;
       }
       
       // Default Response
-      return `🤖 <strong>Ask me about:</strong><br><br>
-      1. "How to reduce screen time by 70% in 30 days?"<br>
-      2. "What's the fastest way to edit YouTube videos?"<br>
-      3. "How to focus for 5 hours straight?"<br><br>
-      <em>Pro Tip:</em> I give detailed, step-by-step answers to specific questions!`;
+      return `🤖 <strong>I'm Valerow AI - your digital coach for:</strong><br><br>
+      1. Phone addiction recovery<br>
+      2. Video editing mastery<br>
+      3. Productivity enhancement<br><br>
+      
+      <div class="ai-tip-box">
+        <strong>Try asking:</strong><br>
+        • "How to order Valerow products?"<br>
+        • "What's your Instagram?"<br>
+        • "Tell me about the founders"<br>
+        • "Best editing software for beginners?"
+      </div>`;
     }
 
     // AI Chat Interface
