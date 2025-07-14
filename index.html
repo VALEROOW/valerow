@@ -308,6 +308,21 @@
     }
     
     .hidden { display: none; }
+    
+    /* Contact Info Styles */
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .contact-info a {
+      color: #cba135;
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -334,7 +349,7 @@
   <section id="services">
     <h2>Our Services</h2>
     <ul class="services">
-      <li><a href="📵 Phone Addiction Recovery Routine.png" target="_blank" style="color:inherit;text-decoration:none;">📵 Phone Addiction Recovery Routine</a></li>
+      <li class="phone-addiction-item">📵 Phone Addiction Recovery Routine</li>
       <li>🎬 Video Editing Training Program</li>
       <li>📈 Personal Productivity Coaching</li>
       <li>📦 Premium Physical Products</li>
@@ -355,11 +370,8 @@
 
   <section id="contact" class="contact">
     <h2>Leave Your Info</h2>
-    <form name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="contact" method="POST" netlify>
       <input type="hidden" name="form-name" value="contact">
-      <p class="hidden">
-        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-      </p>
       <input type="text" name="name" placeholder="Your Full Name" required />
       <input type="email" name="email" placeholder="Email Address" required />
       <input type="tel" name="phone" placeholder="Phone Number" required />
@@ -368,6 +380,14 @@
       <textarea name="message" placeholder="Your Message or Query"></textarea>
       <button type="submit">Submit</button>
     </form>
+    
+    <div class="contact-info">
+      <h3>Direct Contact</h3>
+      <a href="tel:+919993773575">📞 +91 9993773575</a>
+      <a href="tel:+917669844946">📞 +91 7669844946</a>
+      <a href="mailto:valerowbusiness@gmail.com">📧 valerowbusiness@gmail.com</a>
+      <a href="https://instagram.com/valerow_" target="_blank">📷 @valerow_</a>
+    </div>
   </section>
 
   <!-- AI Assistant Section (Hidden by Default) -->
@@ -462,102 +482,150 @@
       });
     });
 
-    // ====================== SUPER AI CORE ====================== //
+    // Phone Addiction Item Click Handler
+    document.querySelector('.phone-addiction-item').addEventListener('click', function() {
+      document.getElementById('ai-assistant').style.display = 'block';
+      document.getElementById('ai-fullpage-input').value = "How to recover from phone addiction?";
+      window.scrollTo({ top: document.getElementById('ai-assistant').offsetTop, behavior: 'smooth' });
+    });
+
+    // ====================== ENHANCED AI CORE ====================== //
     const aiExpert = {
       // Phone Addiction Solutions
       "phone addiction": {
         question: "How to reduce phone addiction?",
-        answer: `🚀 <strong>Step-by-Step Phone Detox:</strong><br><br>
-        1. <u>Digital Declutter</u>: Delete unused apps (keep only essentials)<br>
-        2. <u>Grayscale Mode</u>: Make screen black & white to reduce dopamine hits<br>
-        3. <u>20-20-20 Rule</u>: Every 20 mins, look 20 feet away for 20 seconds<br>
-        4. <u>App Limits</u>: Set strict time limits (iOS Screen Time / Android Digital Wellbeing)<br>
-        5. <u>No Phone Zones</u>: Bedroom, dining table, bathroom = Phone-Free!<br><br>
-        💡 <em>Pro Tip:</em> Use our <a href="#services">Phone Recovery Routine</a> for faster results!`,
+        answer: `🚀 <strong>Comprehensive Phone Detox Plan:</strong><br><br>
+        1. <u>Digital Audit (Day 1-3)</u>:<br>
+           • Track screen time with apps like Digital Wellbeing<br>
+           • Identify your top 3 time-wasting apps<br><br>
+        2. <u>Environment Design (Day 4-7)</u>:<br>
+           • Enable grayscale mode (reduces dopamine hits by 50%)<br>
+           • Create "no-phone zones" (bedroom, dining table)<br><br>
+        3. <u>Behavior Replacement (Week 2+)</u>:<br>
+           • Implement the 20-20-20 rule (every 20 mins, 20 sec break looking 20 ft away)<br>
+           • Replace social media with Kindle/audible during commute<br><br>
+        💡 <em>Advanced Technique:</em> Use our <a href="#services">90-Day Detox Challenge</a> with daily accountability checks`,
         followUp: ["What if I relapse?", "Best focus apps?"]
       },
       
       // Video Editing Mastery
       "editing": {
         question: "How to improve video editing skills?",
-        answer: `🎬 <strong>Editing Pro Framework:</strong><br><br>
-        <u>Technical Skills</u>:<br>
-        • Master keyboard shortcuts (JKL for playback)<br>
-        • Learn color grading basics (LUTs + scopes)<br><br>
-        <u>Storytelling</u>:<br>
-        • Follow 3-act structure (Setup > Conflict > Resolution)<br>
-        • Use B-roll strategically (hide cuts, add context)<br><br>
-        ⏱️ <u>Workflow</u>:<br>
-        1. Organize footage with color labels<br>
-        2. Rough cut first (ignore perfection)<br>
-        3. Fine-tune audio (most viewers forgive bad video but not bad audio)<br><br>
-        🛠️ <em>Recommended Tools:</em> Premiere Pro (professionals), DaVinci Resolve (free version powerful)`,
-        followUp: ["Best transitions to use?", "How to make viral edits?"]
+        answer: `🎬 <strong>Pro Editor's Roadmap:</strong><br><br>
+        <u>Month 1: Technical Foundation</u>:<br>
+        • Master 15 essential shortcuts (JKL trimming, ripple delete)<br>
+        • Learn color correction using vectorscopes/waveforms<br><br>
+        <u>Month 2: Storytelling</u>:<br>
+        • Apply the 3-act structure to all projects<br>
+        • Develop "B-roll first" editing mentality<br><br>
+        <u>Month 3: Workflow Optimization</u>:<br>
+        • Create custom presets for repetitive tasks<br>
+        • Implement proxy editing for 4K+ footage<br><br>
+        🛠️ <em>Tool Stack:</em><br>
+        • Beginners: DaVinci Resolve (free)<br>
+        • Professionals: Premiere Pro + After Effects combo`,
+        followUp: ["Best transitions for YouTube?", "How to edit faster?"]
       },
       
       // Productivity System
       "productivity": {
         question: "How to be more productive?",
-        answer: `⏳ <strong>Valerow Productivity Stack:</strong><br><br>
-        <u>Morning Routine</u>:<br>
-        1. <strong>No Phone First Hour</strong> (drink water, exercise, plan day)<br>
-        2. <strong>3-2-1 Rule</strong>: 3 Most Important Tasks → 2 Medium → 1 Small<br><br>
-        <u>Work Sessions</u>:<br>
-        • 90-min focused blocks (phone in another room)<br>
-        • After each block: 15-min movement break<br><br>
-        🔥 <em>Pro Hack:</em> Every Sunday do "<strong>Time Budgeting</strong>":<br>
-        1. Track where time actually goes<br>
-        2. Cut 1 time-wasting activity each week`,
+        answer: `⏳ <strong>The Valerow Productivity Framework:</strong><br><br>
+        <u>Morning Protocol (6-9 AM)</u>:<br>
+        1. <strong>No Screen First Hour</strong>:<br>
+           • Hydration + 7-min workout<br>
+           • Handwritten daily plan<br><br>
+        <u>Deep Work Blocks (3x90min)</u>:<br>
+        • Phone in another room<br>
+        • Noise-cancelling headphones with brown noise<br><br>
+        <u>Evening Review (9-10 PM)</u>:<br>
+        • 15-min journaling (wins/failures)<br>
+        • Prepare next day's 3-2-1 task list<br><br>
+        🔥 <em>Pro Tip:</em> Every Sunday do a "<strong>Digital Detox Day</strong>" - no screens for 24 hours`,
         followUp: ["How to avoid burnout?", "Best Pomodoro timer?"]
+      },
+      
+      // Relapse Recovery
+      "relapse": {
+        question: "What if I relapse into phone addiction?",
+        answer: `🔄 <strong>Relapse Recovery Protocol:</strong><br><br>
+        1. <u>72-Hour Reset</u>:<br>
+           • Delete the app you relapsed on<br>
+           • Enable app timers (max 30 mins/day)<br><br>
+        2. <u>Accountability Partner</u>:<br>
+           • Share your screen time with a friend daily<br>
+           • $50 penalty for exceeding limits (donate to charity)<br><br>
+        3. <u>Root Cause Analysis</u>:<br>
+           • Identify triggers (boredom/stress/loneliness)<br>
+           • Create alternative responses (pushups, journaling)`
+      },
+      
+      // Viral Content
+      "viral": {
+        question: "How to make viral edits?",
+        answer: `📈 <strong>Viral Content Formula (Tested)</strong>:<br><br>
+        <u>Hook Formula (First 3 Seconds)</u>:<br>
+        • Start mid-action ("Wait, what?")<br>
+        • Use bold text overlay ("You're doing this wrong")<br><br>
+        <u>Retention Hacks</u>:<br>
+        • Cut every 2-3 seconds (TikTok/Reels)<br>
+        • Add "pattern interrupts" (zoom effects, sound effects)<br><br>
+        <u>Algorithm Tricks</u>:<br>
+        • Post at 8 AM & 7 PM (dual-audience strategy)<br>
+        • Use 3-5 trending hashtags + 2 niche ones`
       }
     };
 
-    // AI Response Generator
+    // Enhanced AI Response Generator
     function generateAIResponse(query) {
       query = query.toLowerCase();
       
       // Phone Addiction Responses
       if (query.includes("phone") || query.includes("addict") || query.includes("screen")) {
         if (query.includes("relapse")) {
-          return `💪 <strong>Relapse Recovery:</strong><br><br>
-          Don't guilt yourself! Even pros slip sometimes.<br><br>
-          1. <u>5-5-5 Rule</u>: Ask "Will this matter in 5 days/weeks/months?"<br>
-          2. <u>Reset Fast</u>: Delete the app you relapsed on immediately<br>
-          3. <u>Accountability</u>: Tell 1 friend about your slip within 24 hours`;
+          return aiExpert["relapse"].answer;
         }
         return aiExpert["phone addiction"].answer;
       }
       
       // Editing Responses
-      if (query.includes("edit") || query.includes("video") || query.includes("transition")) {
-        if (query.includes("viral")) {
-          return `📈 <strong>Viral Edit Formula:</strong><br><br>
-          1. <u>Hook Fast</u>: First 3 seconds must grab attention<br>
-          2. <u>Pace</u>: Keep cuts under 3 seconds for TikTok/Reels<br>
-          3. <u>Trends</u>: Use trending audio + put unique twist<br><br>
-          🎯 <em>Key Insight:</em> "Watch time" > "Views" - Algorithm loves retention!`;
+      if (query.includes("edit") || query.includes("video")) {
+        if (query.includes("viral") || query.includes("trend")) {
+          return aiExpert["viral"].answer;
+        }
+        if (query.includes("transition") || query.includes("effect")) {
+          return `🎞️ <strong>Professional Transitions Guide:</strong><br><br>
+          • <u>For Tutorials</u>: Simple cuts + occasional zoom transitions<br>
+          • <u>For Music Videos</u>: Glitch transitions + speed ramps<br>
+          • <u>For Podcasts</u>: J-cut transitions (audio precedes video)<br><br>
+          🚫 <em>Avoid:</em> Overusing flashy transitions - distracts from content`;
         }
         return aiExpert["editing"].answer;
       }
       
       // Productivity Responses
-      if (query.includes("productiv") || query.includes("focus") || query.includes("pomodoro")) {
+      if (query.includes("productiv") || query.includes("focus")) {
         if (query.includes("burnout")) {
-          return `🧠 <strong>Burnout Prevention:</strong><br><br>
-          1. <u>Weekly Deep Rest</u>: 1 full day offline (no creative work)<br>
-          2. <u>Energy Tracking</u>: Notice when you're most focused (morning/night?)<br>
-          3. <u>Microbreaks</u>: Every 90 mins - stretch, hydrate, walk<br><br>
-          🚨 <em>Warning Signs:</em> Irritability, procrastination, tiredness even after sleep`;
+          return `🧠 <strong>Burnout Recovery Plan:</strong><br><br>
+          1. <u>Immediate Reset (24h)</u>:<br>
+             • No work devices after 6 PM<br>
+             • 90-min nature walk without phone<br><br>
+          2. <u>Weekly Maintenance</u>:<br>
+             • "No Meeting Wednesdays"<br>
+             • Digital Sabbath (Sunday offline)<br><br>
+          3. <u>Long-Term Solution</u>:<br>
+             • 80/20 rule - focus on top 20% tasks<br>
+             • Quarterly 3-day detox retreats`;
         }
         return aiExpert["productivity"].answer;
       }
       
       // Default Response
       return `🤖 <strong>Ask me about:</strong><br><br>
-      1. <u>Phone Addiction</u>: "How to reduce screen time?"<br>
-      2. <u>Video Editing</u>: "Best transitions for reels?"<br>
-      3. <u>Productivity</u>: "How to focus for longer?"<br><br>
-      <em>Tip:</em> Be specific for detailed step-by-step guides!`;
+      1. "How to reduce screen time by 70% in 30 days?"<br>
+      2. "What's the fastest way to edit YouTube videos?"<br>
+      3. "How to focus for 5 hours straight?"<br><br>
+      <em>Pro Tip:</em> I give detailed, step-by-step answers to specific questions!`;
     }
 
     // AI Chat Interface
@@ -596,7 +664,7 @@
       messages.innerHTML += `<div class="user-query">You: ${input.value}</div>`;
       
       // Thinking animation
-      messages.innerHTML += `<div class="ai-response">AI: <span class="typing">Typing...</span></div>`;
+      messages.innerHTML += `<div class="ai-response">AI: <span class="typing">Analyzing...</span></div>`;
       messages.scrollTop = messages.scrollHeight;
       
       // Simulate AI processing delay
@@ -604,7 +672,7 @@
         const response = generateAIResponse(input.value);
         document.querySelector('.typing').outerHTML = response;
         messages.scrollTop = messages.scrollHeight;
-      }, 1000);
+      }, 800);
       
       input.value = '';
     }
@@ -620,7 +688,7 @@
       messages.innerHTML += `<div class="user-query">You: ${input.value}</div>`;
       
       // Thinking animation
-      messages.innerHTML += `<div class="ai-response">AI: <span class="typing">Typing...</span></div>`;
+      messages.innerHTML += `<div class="ai-response">AI: <span class="typing">Analyzing...</span></div>`;
       messages.scrollTop = messages.scrollHeight;
       
       // Simulate AI processing delay
@@ -628,7 +696,7 @@
         const response = generateAIResponse(input.value);
         document.querySelector('.typing').outerHTML = response;
         messages.scrollTop = messages.scrollHeight;
-      }, 1000);
+      }, 800);
       
       input.value = '';
     }
@@ -640,6 +708,14 @@
     
     document.getElementById('ai-fullpage-input').addEventListener('keypress', (e) => {
       if (e.key === 'Enter') sendFullpageAIQuery();
+    });
+    
+    // Form Submission Handler
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simple form handling - for production, use Netlify or Formspree
+      alert('Thank you! We will contact you soon.');
+      this.reset();
     });
   </script>
 </body>
