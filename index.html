@@ -18,12 +18,12 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #0d0d0d;
+      background: #000000;
       color: #fff;
       line-height: 1.6;
     }
     header {
-      background: #1c1c1c;
+      background: #000000;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -32,6 +32,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #333;
     }
     .logo {
       display: flex;
@@ -47,6 +48,7 @@
     header h1 {
       font-size: 1.5rem;
       color: #cba135;
+      font-weight: 700;
     }
     nav {
       display: flex;
@@ -60,8 +62,13 @@
       font-size: 0.9rem;
       transition: 0.3s;
       white-space: nowrap;
+      padding: 8px 12px;
+      border-radius: 6px;
     }
-    nav a:hover { color: #cba135; }
+    nav a:hover { 
+      color: #cba135;
+      background: rgba(203, 161, 53, 0.1);
+    }
     .menu-toggle {
       display: none;
       background: none;
@@ -69,10 +76,11 @@
       color: white;
       font-size: 1.5rem;
       cursor: pointer;
+      padding: 5px;
     }
 
     .hero {
-      background: linear-gradient(145deg, #121212, #1e1e1e);
+      background: linear-gradient(145deg, #000000, #111111);
       text-align: center;
       padding: 80px 20px;
       position: relative;
@@ -101,11 +109,15 @@
       font-size: 2.2rem;
       margin-bottom: 20px;
       color: #fff;
+      font-weight: 700;
     }
     .hero p {
       font-size: 1.1rem;
       margin-bottom: 30px;
       color: #ccc;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .hero button {
       background: #cba135;
@@ -149,6 +161,7 @@
       color: #cba135;
       margin-bottom: 20px;
       text-align: center;
+      font-weight: 700;
     }
 
     .services {
@@ -159,16 +172,18 @@
     }
     
     .service-card {
-      background: #1a1a1a;
+      background: #111111;
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
       border-left: 5px solid #cba135;
+      border: 1px solid #333;
     }
     
     .service-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(203, 161, 53, 0.3);
+      border-color: #cba135;
     }
     
     .service-image {
@@ -195,6 +210,7 @@
       color: #cba135;
       margin-bottom: 10px;
       font-size: 1.3rem;
+      font-weight: 600;
     }
     
     .service-content p {
@@ -212,6 +228,9 @@
       font-weight: bold;
       text-decoration: none;
       transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
     
     .service-btn:hover {
@@ -220,9 +239,9 @@
     }
 
     .founder-box {
-      background: #141414;
+      background: #111111;
       border: 2px solid #cba135;
-      padding: 20px;
+      padding: 30px;
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 0 14px #cba13555;
@@ -237,6 +256,7 @@
     .founder-box p {
       font-size: 1.1rem;
       color: #eee;
+      margin-top: 15px;
     }
 
     .brochure {
@@ -249,6 +269,7 @@
       display: inline-block;
       margin-top: 10px;
       transition: 0.3s;
+      padding: 8px 0;
     }
     .brochure a:hover {
       transform: scale(1.05);
@@ -258,19 +279,24 @@
       display: grid;
       gap: 12px;
       margin-top: 20px;
+      background: #111111;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #333;
     }
-    .contact input, .contact textarea {
+    .contact input, .contact textarea, .contact select {
       padding: 12px;
       border-radius: 8px;
-      border: none;
-      background: #1a1a1a;
+      border: 1px solid #333;
+      background: #000000;
       color: white;
       font-size: 1rem;
       transition: all 0.3s;
     }
-    .contact input:focus, .contact textarea:focus {
+    .contact input:focus, .contact textarea:focus, .contact select:focus {
       outline: none;
       box-shadow: 0 0 0 2px #cba135;
+      border-color: #cba135;
     }
     .contact textarea {
       resize: vertical;
@@ -286,6 +312,7 @@
       cursor: pointer;
       font-size: 1rem;
       transition: 0.3s;
+      margin-top: 10px;
     }
     .contact button:hover {
       background: #d4af37;
@@ -293,11 +320,12 @@
     }
 
     footer {
-      background: #111;
-      padding: 20px;
+      background: #000000;
+      padding: 30px 20px;
       text-align: center;
       color: #aaa;
       font-size: 0.8rem;
+      border-top: 1px solid #333;
     }
 
     #scrollBtn {
@@ -315,6 +343,7 @@
       display: none;
       transition: 0.3s;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 999;
     }
     #scrollBtn:hover {
       transform: translateY(-3px);
@@ -373,7 +402,7 @@
       bottom: 70px;
       left: 20px;
       width: 300px;
-      background: #1E1E1E;
+      background: #111111;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.5);
       display: none;
@@ -389,7 +418,7 @@
     }
 
     .ai-header {
-      background: #0A1F44;
+      background: #000000;
       color: #D4AF37;
       padding: 10px;
       border-top-left-radius: 12px;
@@ -399,6 +428,7 @@
       justify-content: space-between;
       align-items: center;
       font-size: 0.9rem;
+      border-bottom: 1px solid #333;
     }
     
     .ai-messages {
@@ -406,20 +436,24 @@
       overflow-y: auto;
       padding: 12px;
       font-size: 0.9rem;
+      background: #000000;
     }
     
     .ai-input-area {
       display: flex;
       padding: 8px;
       border-top: 1px solid #333;
+      background: #111111;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
     }
     
     #ai-user-input {
       flex: 1;
       padding: 8px;
-      border: none;
+      border: 1px solid #333;
       border-radius: 6px;
-      background: #2A2A2A;
+      background: #000000;
       color: white;
       font-size: 0.9rem;
     }
@@ -451,7 +485,7 @@
     .ai-response {
       margin-bottom: 8px;
       padding: 6px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
       border-radius: 4px;
       animation: fadeIn 0.5s ease-out;
     }
@@ -492,6 +526,10 @@
     .contact-info {
       margin-top: 25px;
       text-align: center;
+      background: #111111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
     }
     .contact-info a {
       color: #cba135;
@@ -500,10 +538,13 @@
       text-decoration: none;
       font-size: 1rem;
       transition: 0.3s;
+      padding: 8px;
+      border-radius: 6px;
     }
     .contact-info a:hover {
       text-decoration: underline;
       transform: translateX(5px);
+      background: rgba(203, 161, 53, 0.1);
     }
     
     /* Social Media Badge */
@@ -552,11 +593,12 @@
       top: 80px;
       left: 0;
       right: 0;
-      background: #1c1c1c;
+      background: #000000;
       padding: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.5);
       z-index: 999;
       animation: slideDown 0.3s ease-out;
+      border-bottom: 1px solid #333;
     }
 
     @keyframes slideDown {
@@ -691,7 +733,7 @@
     }
     
     .modal-content {
-      background-color: #1a1a1a;
+      background-color: #000000;
       margin: 5% auto;
       padding: 25px;
       border: 2px solid #cba135;
@@ -725,10 +767,25 @@
     .modal-header h3 {
       color: #cba135;
       font-size: 1.5rem;
+      font-weight: 700;
     }
     
     .modal-body {
       padding: 10px 0;
+      color: #ccc;
+    }
+    
+    .modal-body strong {
+      color: #fff;
+    }
+    
+    .modal-body ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+    
+    .modal-body li {
+      margin-bottom: 8px;
     }
     
     .modal-footer {
@@ -752,6 +809,163 @@
     .modal-btn:hover {
       background: #d4af37;
       transform: translateY(-2px);
+    }
+    
+    /* Enrollment Page Styles */
+    .enrollment-page {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 3000;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    
+    .enrollment-container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #111;
+      border-radius: 10px;
+      padding: 30px;
+      border: 1px solid #cba135;
+      box-shadow: 0 0 20px rgba(203, 161, 53, 0.3);
+    }
+    
+    .enrollment-header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #333;
+    }
+    
+    .enrollment-header h2 {
+      color: #cba135;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    
+    .enrollment-header p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    
+    .enrollment-form {
+      display: grid;
+      gap: 15px;
+    }
+    
+    .enrollment-form input, 
+    .enrollment-form select, 
+    .enrollment-form textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #000;
+      color: white;
+      font-size: 1rem;
+    }
+    
+    .enrollment-form label {
+      color: #cba135;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .payment-option {
+      background: #000;
+      border: 1px solid #333;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .payment-option:hover {
+      border-color: #cba135;
+    }
+    
+    .payment-option.selected {
+      border-color: #cba135;
+      background: rgba(203, 161, 53, 0.1);
+    }
+    
+    .payment-option h4 {
+      color: #cba135;
+      margin-bottom: 10px;
+    }
+    
+    .payment-option p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    
+    .close-enrollment {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #cba135;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .enrollment-btn {
+      background: #cba135;
+      color: #000;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+    
+    .enrollment-btn:hover {
+      background: #d4af37;
+    }
+    
+    .survey-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin: 15px 0;
+    }
+    
+    .survey-option {
+      background: #000;
+      border: 1px solid #333;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .survey-option:hover {
+      border-color: #cba135;
+    }
+    
+    .survey-option.selected {
+      border-color: #cba135;
+      background: rgba(203, 161, 53, 0.1);
     }
 
     /* Responsive Styles */
@@ -801,6 +1015,9 @@
       .services {
         grid-template-columns: 1fr;
       }
+      .enrollment-container {
+        padding: 20px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -816,6 +1033,9 @@
       }
       .modal-content {
         padding: 15px;
+      }
+      .enrollment-header h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -877,7 +1097,7 @@
         <div class="service-content">
           <h3>Video Editing Mastery</h3>
           <p>From beginner to professional editor in 12 weeks. Learn Premiere Pro, After Effects, and DaVinci Resolve.</p>
-          <a href="#contact" class="service-btn">Enroll Now</a>
+          <button class="service-btn enroll-btn" data-course="video-editing">Enroll Now</button>
         </div>
       </div>
       
@@ -888,7 +1108,7 @@
         <div class="service-content">
           <h3>Graphic Design Pro</h3>
           <p>Master Photoshop, Illustrator, and design principles to create stunning visuals for brands and businesses.</p>
-          <a href="#contact" class="service-btn">Enroll Now</a>
+          <button class="service-btn enroll-btn" data-course="graphic-design">Enroll Now</button>
         </div>
       </div>
       
@@ -899,7 +1119,7 @@
         <div class="service-content">
           <h3>Digital Marketing</h3>
           <p>Learn SEO, social media marketing, Google Ads, and content strategy to grow any business online.</p>
-          <a href="#contact" class="service-btn">Enroll Now</a>
+          <button class="service-btn enroll-btn" data-course="digital-marketing">Enroll Now</button>
         </div>
       </div>
       
@@ -910,7 +1130,7 @@
         <div class="service-content">
           <h3>Phone Addiction Recovery</h3>
           <p>Our 30-day program helps you break free from screen addiction and reclaim your focus and productivity.</p>
-          <a href="#contact" class="service-btn">Join Program</a>
+          <button class="service-btn enroll-btn" data-course="phone-detox">Join Program</button>
         </div>
       </div>
       
@@ -921,7 +1141,7 @@
         <div class="service-content">
           <h3>Stock Market Investing</h3>
           <p>Learn technical analysis, fundamental research, and trading strategies from market experts.</p>
-          <a href="#contact" class="service-btn">Learn More</a>
+          <button class="service-btn enroll-btn" data-course="stock-market">Enroll Now</button>
         </div>
       </div>
     </div>
@@ -932,31 +1152,47 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close-modal">&times;</span>
-        <h3>Video Editing Mastery Course</h3>
+        <h3>Become a Professional Video Editor in 12 Weeks</h3>
       </div>
       <div class="modal-body">
-        <p><strong>Become a professional video editor in 12 weeks</strong></p>
-        <p>What you'll learn:</p>
+        <p><strong>Transform from beginner to professional editor with our comprehensive program</strong></p>
+        <p>This course is designed to take you from absolute beginner to job-ready video editor in just 3 months. You'll master industry-standard tools and techniques used by professionals worldwide.</p>
+        
+        <p><strong>What you'll learn:</strong></p>
         <ul>
-          <li>Adobe Premiere Pro from basics to advanced</li>
-          <li>After Effects for motion graphics and VFX</li>
-          <li>DaVinci Resolve for color grading</li>
-          <li>Editing techniques for YouTube, Instagram, and professional work</li>
-          <li>Sound design and mixing</li>
-          <li>Creating a professional portfolio</li>
+          <li><strong>Adobe Premiere Pro:</strong> Complete editing workflow, shortcuts, effects, and professional techniques</li>
+          <li><strong>After Effects:</strong> Motion graphics, visual effects, and animation for engaging content</li>
+          <li><strong>DaVinci Resolve:</strong> Hollywood-grade color correction and grading</li>
+          <li><strong>Sound Design:</strong> Audio mixing, sound effects, and voiceover processing</li>
+          <li><strong>Workflow Optimization:</strong> Organization, proxies, and rendering best practices</li>
+          <li><strong>Client Projects:</strong> Handling revisions, feedback, and delivery formats</li>
         </ul>
-        <p><strong>Course Features:</strong></p>
+        
+        <p><strong>Course Structure:</strong></p>
         <ul>
-          <li>50+ video lessons</li>
-          <li>Weekly assignments with feedback</li>
-          <li>Access to premium editing assets</li>
+          <li><strong>Week 1-4:</strong> Foundations of editing and Premiere Pro mastery</li>
+          <li><strong>Week 5-8:</strong> Motion graphics and effects with After Effects</li>
+          <li><strong>Week 9-12:</strong> Advanced techniques and portfolio development</li>
+          <li><strong>Bonus:</strong> Freelance business setup and client acquisition</li>
+        </ul>
+        
+        <p><strong>What You Get:</strong></p>
+        <ul>
+          <li>50+ hours of HD video lessons</li>
+          <li>Project files and assets worth ₹15,000</li>
+          <li>Weekly live Q&A sessions with instructors</li>
           <li>Certificate of completion</li>
-          <li>Placement assistance</li>
+          <li>Placement assistance for top students</li>
         </ul>
-        <p><strong>Price:</strong> ₹9,999 (or 3 monthly payments of ₹3,999)</p>
+        
+        <p><strong>Pricing:</strong></p>
+        <ul>
+          <li>Full Payment: ₹9,999 (save ₹2,000)</li>
+          <li>Installment Plan: 3 monthly payments of ₹3,999</li>
+        </ul>
       </div>
       <div class="modal-footer">
-        <button class="modal-btn" onclick="location.href='#contact'">Enroll Now</button>
+        <button class="modal-btn enroll-btn" data-course="video-editing">Enroll Now</button>
       </div>
     </div>
   </div>
@@ -965,31 +1201,39 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close-modal">&times;</span>
-        <h3>Graphic Design Pro Course</h3>
+        <h3>Master Graphic Design and Build a Profitable Career</h3>
       </div>
       <div class="modal-body">
-        <p><strong>Master Adobe Creative Suite and design principles</strong></p>
-        <p>Course modules include:</p>
+        <p><strong>Develop professional design skills and start earning within months</strong></p>
+        <p>This comprehensive program teaches you both the technical skills and creative thinking needed to succeed as a graphic designer. Whether you want to freelance, work for an agency, or start your own business, this course gives you the foundation.</p>
+        
+        <p><strong>Course modules include:</strong></p>
         <ul>
-          <li>Photoshop for photo editing and digital art</li>
-          <li>Illustrator for vector graphics and logos</li>
-          <li>Design theory and color psychology</li>
-          <li>Typography and layout principles</li>
-          <li>Brand identity development</li>
-          <li>Freelance business setup</li>
+          <li><strong>Adobe Photoshop:</strong> Photo editing, compositing, and digital painting</li>
+          <li><strong>Adobe Illustrator:</strong> Vector graphics, logos, and illustrations</li>
+          <li><strong>Design Theory:</strong> Color psychology, typography, and layout principles</li>
+          <li><strong>Brand Identity:</strong> Creating cohesive visual systems for businesses</li>
+          <li><strong>Print vs Digital:</strong> Understanding different media requirements</li>
+          <li><strong>Client Projects:</strong> From brief to final delivery</li>
         </ul>
-        <p><strong>What you get:</strong></p>
+        
+        <p><strong>What's Included:</strong></p>
         <ul>
-          <li>40+ hours of training</li>
-          <li>Real-world projects</li>
-          <li>Design resource library</li>
-          <li>1-on-1 mentorship sessions</li>
-          <li>Job placement support</li>
+          <li>40+ hours of step-by-step video training</li>
+          <li>Premium design resource library (fonts, templates, mockups)</li>
+          <li>3 portfolio review sessions with instructors</li>
+          <li>Freelance business guide (contracts, pricing, invoicing)</li>
+          <li>Access to private design community</li>
         </ul>
-        <p><strong>Price:</strong> ₹8,999 (or 3 monthly payments of ₹3,499)</p>
+        
+        <p><strong>Pricing:</strong></p>
+        <ul>
+          <li>Full Payment: ₹8,999 (save ₹1,500)</li>
+          <li>Installment Plan: 3 monthly payments of ₹3,499</li>
+        </ul>
       </div>
       <div class="modal-footer">
-        <button class="modal-btn" onclick="location.href='#contact'">Enroll Now</button>
+        <button class="modal-btn enroll-btn" data-course="graphic-design">Enroll Now</button>
       </div>
     </div>
   </div>
@@ -998,31 +1242,39 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close-modal">&times;</span>
-        <h3>Digital Marketing Masterclass</h3>
+        <h3>Digital Marketing Mastery: From Beginner to Expert</h3>
       </div>
       <div class="modal-body">
-        <p><strong>Comprehensive training in all digital marketing channels</strong></p>
-        <p>Topics covered:</p>
+        <p><strong>Learn to drive traffic, generate leads, and grow businesses online</strong></p>
+        <p>This practical course covers all essential digital marketing channels with hands-on projects using real budgets. You'll graduate with the skills to manage complete marketing campaigns for any business.</p>
+        
+        <p><strong>Topics covered:</strong></p>
         <ul>
-          <li>Search Engine Optimization (SEO)</li>
-          <li>Google Ads and Facebook Ads</li>
-          <li>Content marketing and copywriting</li>
-          <li>Social media marketing strategies</li>
-          <li>Email marketing automation</li>
-          <li>Analytics and performance tracking</li>
+          <li><strong>Search Engine Optimization (SEO):</strong> On-page, technical, and off-page SEO</li>
+          <li><strong>Paid Advertising:</strong> Google Ads, Facebook/Instagram Ads, LinkedIn Ads</li>
+          <li><strong>Content Marketing:</strong> Blogging, video, and social media content strategies</li>
+          <li><strong>Social Media Marketing:</strong> Organic growth and community building</li>
+          <li><strong>Email Marketing:</strong> Automation, segmentation, and conversion optimization</li>
+          <li><strong>Analytics:</strong> Google Analytics, Facebook Insights, and data-driven decisions</li>
         </ul>
-        <p><strong>Course benefits:</strong></p>
+        
+        <p><strong>Unique Features:</strong></p>
         <ul>
-          <li>Hands-on campaigns with real budgets</li>
-          <li>Certification exam included</li>
-          <li>Access to premium tools</li>
+          <li>Manage real ad campaigns with ₹5,000 budget included</li>
+          <li>Certification exam upon completion</li>
+          <li>Access to premium tools (SEMrush, Ahrefs, Mailchimp)</li>
           <li>Case studies from successful campaigns</li>
-          <li>Internship opportunities</li>
+          <li>Internship opportunities for top performers</li>
         </ul>
-        <p><strong>Price:</strong> ₹11,999 (or 4 monthly payments of ₹3,499)</p>
+        
+        <p><strong>Pricing:</strong></p>
+        <ul>
+          <li>Full Payment: ₹11,999 (save ₹3,000)</li>
+          <li>Installment Plan: 4 monthly payments of ₹3,499</li>
+        </ul>
       </div>
       <div class="modal-footer">
-        <button class="modal-btn" onclick="location.href='#contact'">Enroll Now</button>
+        <button class="modal-btn enroll-btn" data-course="digital-marketing">Enroll Now</button>
       </div>
     </div>
   </div>
@@ -1031,31 +1283,35 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close-modal">&times;</span>
-        <h3>Phone Addiction Recovery Program</h3>
+        <h3>30-Day Phone Addiction Recovery Program</h3>
       </div>
       <div class="modal-body">
-        <p><strong>30-day program to break free from screen addiction</strong></p>
-        <p>Program includes:</p>
+        <p><strong>Break free from screen addiction and reclaim your focus</strong></p>
+        <p>Our scientifically-backed program helps you reduce screen time by 50-70% while maintaining essential connectivity. Thousands have used this method to overcome distraction and improve productivity.</p>
+        
+        <p><strong>Program Includes:</strong></p>
         <ul>
-          <li>Daily mindfulness exercises</li>
-          <li>Screen time reduction techniques</li>
-          <li>Productivity hacks for digital minimalism</li>
-          <li>Habit replacement strategies</li>
-          <li>Community support group</li>
-          <li>Weekly progress tracking</li>
+          <li><strong>Daily Exercises:</strong> Mindfulness and focus training</li>
+          <li><strong>Screen Time Reduction:</strong> Gradual, sustainable approach</li>
+          <li><strong>Productivity Systems:</strong> Replace scrolling with meaningful activities</li>
+          <li><strong>Habit Replacement:</strong> Build positive routines</li>
+          <li><strong>Community Support:</strong> Private group for accountability</li>
+          <li><strong>Progress Tracking:</strong> Weekly check-ins and adjustments</li>
         </ul>
-        <p><strong>What you'll achieve:</strong></p>
+        
+        <p><strong>What You'll Achieve:</strong></p>
         <ul>
-          <li>Reduce screen time by 50-70%</li>
-          <li>Improved focus and concentration</li>
-          <li>Better sleep quality</li>
-          <li>More time for meaningful activities</li>
-          <li>Digital wellbeing tools for life</li>
+          <li>Reduce screen time from 6+ hours to 2-3 hours daily</li>
+          <li>Improved concentration and memory</li>
+          <li>Better sleep quality and energy levels</li>
+          <li>More time for relationships, hobbies, and goals</li>
+          <li>Healthier long-term relationship with technology</li>
         </ul>
-        <p><strong>Price:</strong> ₹4,999 (includes workbook and resources)</p>
+        
+        <p><strong>Pricing:</strong> ₹4,999 (includes workbook, resources, and community access)</p>
       </div>
       <div class="modal-footer">
-        <button class="modal-btn" onclick="location.href='#contact'">Join Program</button>
+        <button class="modal-btn enroll-btn" data-course="phone-detox">Join Program</button>
       </div>
     </div>
   </div>
@@ -1064,38 +1320,113 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close-modal">&times;</span>
-        <h3>Stock Market Investing Course</h3>
+        <h3>Master Stock Market Investing and Trading</h3>
       </div>
       <div class="modal-body">
-        <p><strong>Learn to invest and trade in the stock market</strong></p>
-        <p>Course curriculum:</p>
+        <p><strong>Learn to invest and trade with confidence from market experts</strong></p>
+        <p>This comprehensive course teaches you both fundamental and technical analysis to make informed investment decisions. Whether you want to build long-term wealth or trade actively, this program gives you the tools.</p>
+        
+        <p><strong>Course curriculum:</strong></p>
         <ul>
-          <li>Fundamental analysis of companies</li>
-          <li>Technical analysis and chart patterns</li>
-          <li>Risk management strategies</li>
-          <li>Long-term investing vs short-term trading</li>
-          <li>Options trading basics</li>
-          <li>Market psychology</li>
+          <li><strong>Fundamental Analysis:</strong> Evaluating companies, financial statements, and valuations</li>
+          <li><strong>Technical Analysis:</strong> Chart patterns, indicators, and trading strategies</li>
+          <li><strong>Risk Management:</strong> Position sizing, stop losses, and portfolio allocation</li>
+          <li><strong>Investment Strategies:</strong> Value investing, growth investing, and dividend investing</li>
+          <li><strong>Trading Psychology:</strong> Managing emotions and developing discipline</li>
+          <li><strong>Market Cycles:</strong> Identifying trends and economic indicators</li>
         </ul>
-        <p><strong>Course features:</strong></p>
+        
+        <p><strong>Course Features:</strong></p>
         <ul>
-          <li>Live market sessions</li>
-          <li>Paper trading practice</li>
-          <li>Access to research tools</li>
-          <li>Community of traders</li>
-          <li>Mentorship from experienced investors</li>
+          <li>Live market analysis sessions twice weekly</li>
+          <li>Paper trading practice with virtual ₹1,00,000</li>
+          <li>Access to premium research tools (Screener, TradingView)</li>
+          <li>Private community of traders and investors</li>
+          <li>Mentorship from instructors with 10+ years experience</li>
         </ul>
-        <p><strong>Price:</strong> ₹12,999 (or 4 monthly payments of ₹3,999)</p>
+        
+        <p><strong>Pricing:</strong></p>
+        <ul>
+          <li>Full Payment: ₹50,000 (save ₹10,000)</li>
+          <li>Installment Plan: 4 monthly payments of ₹15,000</li>
+        </ul>
       </div>
       <div class="modal-footer">
-        <button class="modal-btn" onclick="location.href='#contact'">Enroll Now</button>
+        <button class="modal-btn enroll-btn" data-course="stock-market">Enroll Now</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Enrollment Page -->
+  <div class="enrollment-page" id="enrollmentPage">
+    <button class="close-enrollment" id="closeEnrollment">×</button>
+    <div class="enrollment-container">
+      <div class="enrollment-header">
+        <h2 id="enrollmentCourseTitle">Enroll in Course</h2>
+        <p id="enrollmentCourseDesc">Complete this form to enroll in the course</p>
+      </div>
+      
+      <form id="enrollmentForm" name="enrollment" method="POST" netlify>
+        <input type="hidden" name="form-name" value="enrollment">
+        <input type="hidden" id="enrollmentCourse" name="course">
+        
+        <div class="form-group">
+          <label for="enrollmentName">Full Name</label>
+          <input type="text" id="enrollmentName" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="enrollmentEmail">Email Address</label>
+          <input type="email" id="enrollmentEmail" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="enrollmentPhone">Phone Number</label>
+          <input type="tel" id="enrollmentPhone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Payment Option</label>
+          <div class="payment-options">
+            <div class="payment-option" onclick="selectPayment(this, 'full')">
+              <h4>Full Payment</h4>
+              <p id="fullPaymentAmount">₹9,999</p>
+              <input type="radio" name="payment" value="full" id="fullPayment" required hidden>
+            </div>
+            <div class="payment-option" onclick="selectPayment(this, 'installment')">
+              <h4>Installment Plan</h4>
+              <p id="installmentPaymentAmount">3 payments of ₹3,999</p>
+              <input type="radio" name="payment" value="installment" id="installmentPayment" hidden>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>How did you hear about us?</label>
+          <div class="survey-options">
+            <div class="survey-option" onclick="selectSurveyOption(this)">Instagram</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Facebook</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">YouTube</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Friend</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Google</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Other</div>
+            <input type="hidden" id="referralSource" name="referral">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="enrollmentQuestions">Any Questions?</label>
+          <textarea id="enrollmentQuestions" name="questions"></textarea>
+        </div>
+        
+        <button type="submit" class="enrollment-btn">Complete Enrollment</button>
+      </form>
     </div>
   </div>
 
   <section class="founder-box">
     <h2>Founders & Mentors</h2>
-    <p id="founder-text"><strong>Aryan & Mohit</strong> — Creative professionals and digital wellness experts with 5+ years of experience helping students master digital skills and overcome technology addiction.</p>
+    <p id="founder-text"><strong>Aryan & Mohit</strong> — Creative professionals and digital wellness experts with 5+ years of experience helping students master digital skills and overcome technology addiction. Our mission is to empower the next generation with practical skills and healthy digital habits.</p>
   </section>
 
   <section id="brochure" class="brochure">
@@ -1112,13 +1443,13 @@
       <input type="text" name="name" placeholder="Your Full Name" required />
       <input type="email" name="email" placeholder="Email Address" required />
       <input type="tel" name="phone" placeholder="Phone Number" required />
-      <select name="interest" required>
+      <select name="interest" required style="padding: 12px; height: auto;">
         <option value="">Select Course Interest</option>
-        <option value="video-editing">Video Editing</option>
-        <option value="graphic-design">Graphic Design</option>
+        <option value="video-editing">Video Editing Mastery</option>
+        <option value="graphic-design">Graphic Design Pro</option>
         <option value="digital-marketing">Digital Marketing</option>
-        <option value="phone-detox">Phone Detox Program</option>
-        <option value="stock-market">Stock Market Course</option>
+        <option value="phone-detox">Phone Addiction Recovery</option>
+        <option value="stock-market">Stock Market Investing</option>
         <option value="other">Other Inquiry</option>
       </select>
       <textarea name="message" placeholder="Your Message or Questions"></textarea>
@@ -1127,8 +1458,8 @@
     
     <div class="contact-info">
       <h3>Direct Contact</h3>
-      <a href="tel:+919993773575">📞 +91 9993773575</a>
-      <a href="tel:+917669844946">📞 +91 7669844946</a>
+      <a href="tel:+919993773575">📞 +91 9993773575 (Aryan)</a>
+      <a href="tel:+917669844946">📞 +91 7669844946 (Mohit)</a>
       <a href="mailto:valerowbusiness@gmail.com">📧 valerowbusiness@gmail.com</a>
       <a href="https://instagram.com/valerow_" target="_blank" class="social-badge">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
@@ -1141,7 +1472,7 @@
   <section id="ai-assistant" style="display:none; padding:50px 20px; max-width:1000px; margin:auto;">
     <h2>Valerow AI Assistant</h2>
     <p>Get instant help with course selection, creative tips, and digital wellness advice.</p>
-    <div style="background: #1E1E1E; border-radius: 12px; padding: 15px; margin-top: 20px; border: 1px solid #D4AF37;">
+    <div style="background: #111111; border-radius: 12px; padding: 15px; margin-top: 20px; border: 1px solid #D4AF37;">
       <div class="ai-messages" id="ai-fullpage-messages">
         <div class="ai-response">🤖 <strong>Hi! I'm Valerow AI Assistant</strong><br><br>
           Ask me about:<br>
@@ -1296,6 +1627,88 @@
       }
     });
 
+    // Enrollment Page Functionality
+    const enrollButtons = document.querySelectorAll('.enroll-btn');
+    const enrollmentPage = document.getElementById('enrollmentPage');
+    const closeEnrollment = document.getElementById('closeEnrollment');
+    
+    enrollButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const course = button.getAttribute('data-course');
+        document.getElementById('enrollmentCourse').value = course;
+        
+        // Set course title and description
+        let courseTitle = '';
+        let courseDesc = '';
+        let fullPrice = '';
+        let installmentPrice = '';
+        
+        switch(course) {
+          case 'video-editing':
+            courseTitle = 'Video Editing Mastery';
+            courseDesc = 'Become a professional editor in 12 weeks';
+            fullPrice = '₹9,999';
+            installmentPrice = '3 payments of ₹3,999';
+            break;
+          case 'graphic-design':
+            courseTitle = 'Graphic Design Pro';
+            courseDesc = 'Master Photoshop and Illustrator for professional design work';
+            fullPrice = '₹8,999';
+            installmentPrice = '3 payments of ₹3,499';
+            break;
+          case 'digital-marketing':
+            courseTitle = 'Digital Marketing';
+            courseDesc = 'Learn SEO, social media, and Google Ads to grow businesses';
+            fullPrice = '₹11,999';
+            installmentPrice = '4 payments of ₹3,499';
+            break;
+          case 'phone-detox':
+            courseTitle = 'Phone Addiction Recovery';
+            courseDesc = '30-day program to break free from screen addiction';
+            fullPrice = '₹4,999';
+            installmentPrice = 'Full payment only';
+            break;
+          case 'stock-market':
+            courseTitle = 'Stock Market Investing';
+            courseDesc = 'Learn technical and fundamental analysis for trading success';
+            fullPrice = '₹50,000';
+            installmentPrice = '4 payments of ₹15,000';
+            break;
+        }
+        
+        document.getElementById('enrollmentCourseTitle').textContent = `Enroll in ${courseTitle}`;
+        document.getElementById('enrollmentCourseDesc').textContent = courseDesc;
+        document.getElementById('fullPaymentAmount').textContent = fullPrice;
+        document.getElementById('installmentPaymentAmount').textContent = installmentPrice;
+        
+        // Show enrollment page
+        enrollmentPage.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    closeEnrollment.addEventListener('click', () => {
+      enrollmentPage.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+    
+    function selectPayment(element, type) {
+      document.querySelectorAll('.payment-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      element.classList.add('selected');
+      document.getElementById(`${type}Payment`).checked = true;
+    }
+    
+    function selectSurveyOption(element) {
+      document.querySelectorAll('.survey-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      element.classList.add('selected');
+      document.getElementById('referralSource').value = element.textContent;
+    }
+
     // ====================== UPDATED VALEROW AI CORE ====================== //
     const aiExpert = {
       // Video Editing
@@ -1329,16 +1742,16 @@
         answer: `🎨 <strong>Graphic Design Pro Course Overview:</strong><br><br>
         <u>Key Skills Covered:</u><br>
         • Photoshop for image manipulation<br>
-        • Illustrator for vector graphics<br>
-        • Design theory and principles<br>
-        • Brand identity development<br>
-        • Print vs digital design<br><br>
+        • Illustrator for vector graphics and logos<br>
+        • Design theory and color psychology<br>
+        • Typography and layout principles<br>
+        • Brand identity development<br><br>
         
         <u>What's Included:</u><br>
-        • 40+ hours of video content<br>
+        • 40+ hours of training<br>
+        • Real-world projects<br>
         • Design resource library<br>
-        • Portfolio review sessions<br>
-        • Freelance business guide<br><br>
+        • 1-on-1 mentorship sessions<br><br>
         
         <u>Pricing:</u> ₹8,999 (or 3 installments of ₹3,499)<br><br>
         
@@ -1354,16 +1767,16 @@
         answer: `📈 <strong>Digital Marketing Masterclass Details:</strong><br><br>
         <u>Modules Include:</u><br>
         • SEO and content marketing<br>
-        • Social media advertising<br>
-        • Google Ads and analytics<br>
-        • Email marketing automation<br>
-        • Conversion rate optimization<br><br>
+        • Google Ads and Facebook Ads<br>
+        • Content marketing and copywriting<br>
+        • Social media marketing strategies<br>
+        • Email marketing automation<br><br>
         
         <u>Unique Features:</u><br>
-        • Hands-on campaign management<br>
+        • Hands-on campaigns with real budgets<br>
         • Certification exam included<br>
         • Access to premium tools<br>
-        • Internship opportunities<br><br>
+        • Case studies from successful campaigns<br><br>
         
         <u>Pricing:</u> ₹11,999 (or 4 installments of ₹3,499)<br><br>
         
@@ -1415,7 +1828,7 @@
         • Research tools access<br>
         • Expert mentorship<br><br>
         
-        <u>Pricing:</u> ₹12,999 (or 4 installments of ₹3,999)<br><br>
+        <u>Pricing:</u> ₹50,000 (or 4 installments of ₹15,000)<br><br>
         
         <div class="ai-tip-box">
           <strong>Note:</strong> This is educational content, not financial advice
@@ -1427,10 +1840,10 @@
       "contact": {
         question: "How to contact Valerow?",
         answer: `📞 <strong>Contact Information:</strong><br><br>
-        • Email: <a href="mailto:valerowbusiness@gmail.com">valerowbusiness@gmail.com</a><br>
+        • Email: <a href="mailto:valerowbusiness@gmail.com" style="color:#cba135;">valerowbusiness@gmail.com</a><br>
         • Phone: +91 9993773575 (Aryan)<br>
         • Phone: +91 7669844946 (Mohit)<br>
-        • Instagram: <a href="https://instagram.com/valerow_" target="_blank">@valerow_</a><br><br>
+        • Instagram: <a href="https://instagram.com/valerow_" target="_blank" style="color:#cba135;">@valerow_</a><br><br>
         
         <u>Business Hours:</u> 10AM-6PM IST (Mon-Fri)<br>
         <u>Response Time:</u> Within 24 hours<br><br>
@@ -1449,7 +1862,7 @@
         • Graphic Design: ₹8,999<br>
         • Digital Marketing: ₹11,999<br>
         • Phone Detox: ₹4,999<br>
-        • Stock Market: ₹12,999<br><br>
+        • Stock Market: ₹50,000<br><br>
         
         <u>Payment Options:</u><br>
         • Full payment (5% discount)<br>
@@ -1482,6 +1895,41 @@
           Both founders are actively involved in teaching and mentoring students
         </div>`,
         followUp: ["Qualifications?", "Success stories?", "Teaching approach?", "Future plans?"]
+      },
+      
+      "best course": {
+        question: "Which course is best for beginners?",
+        answer: `🤔 <strong>Best Course for Beginners:</strong><br><br>
+        For complete beginners, we recommend starting with:<br><br>
+        
+        <strong>1. Graphic Design Pro</strong><br>
+        • Most intuitive creative skill<br>
+        • Immediate visual results<br>
+        • Wide range of applications<br><br>
+        
+        <strong>2. Video Editing Mastery</strong><br>
+        • High demand skill<br>
+        • Good for content creators<br>
+        • Structured learning path<br><br>
+        
+        <div class="ai-tip-box">
+          <strong>Not sure?</strong> Take our free skill assessment or chat with our advisors
+        </div>`,
+        followUp: ["Career opportunities?", "Time commitment?", "Equipment needed?", "Free trial?"]
+      },
+      
+      "free resources": {
+        question: "Do you offer free resources?",
+        answer: `🎁 <strong>Free Resources Available:</strong><br><br>
+        1. <a href="video-editing-starter-guide.pdf" download style="color:#cba135;">Video Editing Starter Guide</a><br>
+        2. <a href="digital-detox-plan.pdf" download style="color:#cba135;">7-Day Digital Detox Plan</a><br>
+        3. <a href="#" style="color:#cba135;">Graphic Design Fundamentals eBook</a><br>
+        4. <a href="#" style="color:#cba135;">Digital Marketing Checklist</a><br><br>
+        
+        <div class="ai-tip-box">
+          These resources give you a taste of our teaching style before enrolling
+        </div>`,
+        followUp: ["More free courses?", "YouTube tutorials?", "Sample lessons?", "Webinars?"]
       }
     };
 
@@ -1535,6 +1983,18 @@
       if (query.includes("aryan") || query.includes("mohit") || query.includes("founder") || 
           query.includes("teacher") || query.includes("instructor") || query.includes("team")) {
         return aiExpert["founders"].answer;
+      }
+      
+      // Best Course
+      if (query.includes("best") || query.includes("beginner") || query.includes("start") || 
+          query.includes("first") || query.includes("recommend")) {
+        return aiExpert["best course"].answer;
+      }
+      
+      // Free Resources
+      if (query.includes("free") || query.includes("resource") || query.includes("trial") || 
+          query.includes("sample") || query.includes("guide")) {
+        return aiExpert["free resources"].answer;
       }
       
       // Default Response
@@ -1654,7 +2114,7 @@
       const form = this;
       const thankYouMessage = document.createElement('div');
       thankYouMessage.innerHTML = `
-        <div style="text-align:center; padding:30px; background:#1a1a1a; border-radius:10px; margin-top:20px;">
+        <div style="text-align:center; padding:30px; background:#111; border-radius:10px; margin-top:20px; border: 1px solid #cba135;">
           <h3 style="color:#cba135;">Thank You!</h3>
           <p>Your form has been submitted successfully.</p>
           <p>We'll contact you shortly.</p>
@@ -1669,6 +2129,28 @@
       
       // Scroll to the thank you message
       thankYouMessage.scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Enrollment Form Submission
+    document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Create thank you message
+      const form = this;
+      const thankYouMessage = document.createElement('div');
+      thankYouMessage.innerHTML = `
+        <div style="text-align:center; padding:30px; background:#111; border-radius:10px; margin-top:20px; border: 1px solid #cba135;">
+          <h3 style="color:#cba135;">Enrollment Submitted!</h3>
+          <p>We've received your enrollment for ${document.getElementById('enrollmentCourseTitle').textContent}.</p>
+          <p>Our team will contact you within 24 hours with payment details and next steps.</p>
+          <button onclick="location.href='#home'" style="background:#cba135; color:#000; border:none; padding:10px 20px; border-radius:5px; margin-top:15px; cursor:pointer;">
+            Back to Home
+          </button>
+        </div>
+      `;
+      
+      // Replace form with thank you message
+      form.parentNode.replaceChild(thankYouMessage, form);
     });
   </script>
 </body>
