@@ -1366,39 +1366,61 @@
         <p id="enrollmentCourseDesc">Complete this form to enroll in the course</p>
       </div>
       
-    <form id="enrollForm"
-      action="https://script.google.com/macros/s/AKfycbzhAl7OsHbk1aJazBwc0q2xYShF_OnLa-hDfXe6u1Ex4AobIjzoV6cxBycF8Y2T0Uli/exec"
-      method="post"
-      target="_top"
-      autocomplete="on">
-
-  <input type="text" name="hp_field" value="" style="display:none !important" tabindex="-1" autocomplete="off">
-
-  <div class="form-row">
-    <div class="field">
-      <input type="text" name="name" placeholder="Full name" required>
-    </div>
-    <div class="field">
-      <input type="email" name="email" placeholder="Email address" required>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="field">
-      <input type="tel" name="phone" placeholder="Phone (optional)">
-    </div>
-  </div>
-
-  <div style="margin-bottom:10px">
-    <textarea name="message" rows="3" placeholder="Why do you want to join? (optional)"></textarea>
-  </div>
-
-  <div style="display:flex;gap:10px;align-items:center">
-    <button class="submit-btn" type="submit">Reserve seat</button>
-    <div class="muted" style="font-size:12px">We’ll email you a schedule & payment link.</div>
-  </div>
-</form>
-
+      <form id="enrollmentForm" name="enrollment" method="POST" netlify>
+        <input type="hidden" name="form-name" value="enrollment">
+        <input type="hidden" id="enrollmentCourse" name="course">
+        
+        <div class="form-group">
+          <label for="enrollmentName">Full Name</label>
+          <input type="text" id="enrollmentName" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="enrollmentEmail">Email Address</label>
+          <input type="email" id="enrollmentEmail" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="enrollmentPhone">Phone Number</label>
+          <input type="tel" id="enrollmentPhone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Payment Option</label>
+          <div class="payment-options">
+            <div class="payment-option" onclick="selectPayment(this, 'full')">
+              <h4>Full Payment</h4>
+              <p id="fullPaymentAmount">₹9,999</p>
+              <input type="radio" name="payment" value="full" id="fullPayment" required hidden>
+            </div>
+            <div class="payment-option" onclick="selectPayment(this, 'installment')">
+              <h4>Installment Plan</h4>
+              <p id="installmentPaymentAmount">3 payments of ₹3,999</p>
+              <input type="radio" name="payment" value="installment" id="installmentPayment" hidden>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>How did you hear about us?</label>
+          <div class="survey-options">
+            <div class="survey-option" onclick="selectSurveyOption(this)">Instagram</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Facebook</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">YouTube</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Friend</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Google</div>
+            <div class="survey-option" onclick="selectSurveyOption(this)">Other</div>
+            <input type="hidden" id="referralSource" name="referral">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="enrollmentQuestions">Any Questions?</label>
+          <textarea id="enrollmentQuestions" name="questions"></textarea>
+        </div>
+        
+        <button type="submit" class="enrollment-btn">Complete Enrollment</button>
+      </form>
     </div>
   </div>
 
